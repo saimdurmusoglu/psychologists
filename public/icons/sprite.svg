@@ -91,4 +91,19 @@
     <path d="M22.5766 4.99417C22.0233 4.44059 21.3663 4.00145 20.6433 3.70184C19.9202 3.40223 19.1452 3.24802 18.3625 3.24802C17.5798 3.24802 16.8047 3.40223 16.0817 3.70184C15.3586 4.00145 14.7016 4.44059 14.1483 4.99417L13 6.1425L11.8516 4.99417C10.734 3.8765 9.21809 3.2486 7.63747 3.2486C6.05685 3.2486 4.54097 3.8765 3.4233 4.99417C2.30563 6.11183 1.67773 7.62772 1.67773 9.20833C1.67773 10.789 2.30563 12.3048 3.4233 13.4225L4.57163 14.5708L13 22.9992L21.4283 14.5708L22.5766 13.4225C23.1302 12.8692 23.5693 12.2122 23.869 11.4891C24.1686 10.7661 24.3228 9.99103 24.3228 9.20833C24.3228 8.42564 24.1686 7.65061 23.869 6.92753C23.5693 6.20445 23.1302 5.54749 22.5766 4.99417Z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
   </symbol>
 
+  <symbol id="icon-close" viewBox="0 0 32 32" fill="none">
+    <path d="M24 8L8 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M8 8L24 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+
+  <symbol id="icon-clock" viewBox="0 0 20 20" fill="none">
+    <g clip-path="url(#clock-clip)">
+      <path d="M9.99984 18.3333C14.6022 18.3333 18.3332 14.6024 18.3332 10C18.3332 5.39763 14.6022 1.66667 9.99984 1.66667C5.39746 1.66667 1.6665 5.39763 1.6665 10C1.6665 14.6024 5.39746 18.3333 9.99984 18.3333Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M10 5V10L13.3333 11.6667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <defs>
+      <clipPath id="clock-clip"><rect width="20" height="20" fill="white"/></clipPath>
+    </defs>
+  </symbol>
+
 </svg>

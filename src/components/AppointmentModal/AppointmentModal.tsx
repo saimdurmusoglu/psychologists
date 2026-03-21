@@ -92,13 +92,8 @@ export default function AppointmentModal({
           onClick={onClose}
           aria-label="Close"
         >
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path
-              d="M1 1L15 15M15 1L1 15"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-            />
+          <svg width="32" height="32" style={{color: "var(--color-text)"}}>
+            <use href="/icons/sprite.svg#icon-close" />
           </svg>
         </button>
 
@@ -162,20 +157,30 @@ export default function AppointmentModal({
               )}
             </div>
             <div className={styles["field"]}>
-              <select
-                {...register("time")}
-                className={`${styles["field__input"]}${errors.time ? ` ${styles["field__input--error"]}` : ""}`}
-                defaultValue=""
-              >
-                <option value="" disabled>
-                  00:00
-                </option>
-                {TIME_SLOTS.map((t) => (
-                  <option key={t} value={t}>
-                    {t}
+              <div className={styles["field__input-wrap"]}>
+                <select
+                  {...register("time")}
+                  defaultValue=""
+                  className={`${styles["field__input"]}${errors.time ? ` ${styles["field__input--error"]}` : ""}`}
+                >
+                  <option value="" disabled>
+                    00:00
                   </option>
-                ))}
-              </select>
+                  {TIME_SLOTS.map((t) => (
+                    <option key={t} value={t}>
+                      {t}
+                    </option>
+                  ))}
+                </select>
+                <svg
+                  width="20"
+                  height="20"
+                  className={styles["field__icon"]}
+                  style={{color: "var(--color-text-secondary)"}}
+                >
+                  <use href="/icons/sprite.svg#icon-clock" />
+                </svg>
+              </div>
               {errors.time && (
                 <span className={styles["field__error"]}>
                   {errors.time.message}

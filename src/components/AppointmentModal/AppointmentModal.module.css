@@ -132,6 +132,24 @@
   gap: 4px;
 }
 
+.field__input-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.field__input-wrap .field__input {
+  width: 100%;
+  padding-right: 44px;
+}
+
+.field__icon {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
 .field__input {
   width: 100%;
   padding: 16px 18px;
@@ -154,11 +172,6 @@
 }
 .field__input--error {
   border-color: var(--color-error);
-}
-
-.field__input textarea {
-  resize: vertical;
-  min-height: 100px;
 }
 
 .field__error {
