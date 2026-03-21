@@ -9,14 +9,14 @@ type SortDir = "asc" | "desc";
 export default function Psychologists() {
   const {psychologists, loading, hasMore, fetchPsychologists, resetAndFetch} =
     usePsychologists();
-  const [sortField, setSortField] = useState<string>("show_all");
+  const [sortField, setSortField] = useState<string>("name");
   const [sortDir, setSortDir] = useState<SortDir>("asc");
   const initialLoad = useRef(false);
 
   useEffect(() => {
     if (!initialLoad.current) {
       initialLoad.current = true;
-      resetAndFetch("show_all", "asc");
+      resetAndFetch("name", "asc");
     }
   }, [resetAndFetch]);
 
@@ -36,7 +36,7 @@ export default function Psychologists() {
     <section className={styles["psychologists-page"]}>
       <div className="container">
         <div className={styles["psychologists-page__top"]}>
-          <SortDropdown onSort={handleSort} />
+          <SortDropdown onSort={handleSort} defaultValue="name_asc" />
         </div>
 
         {psychologists.length === 0 && !loading && (

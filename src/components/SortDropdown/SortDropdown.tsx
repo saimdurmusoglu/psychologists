@@ -12,6 +12,7 @@ interface SortOption {
 
 interface SortDropdownProps {
   onSort: (field: string, dir: SortDir) => void;
+  defaultValue?: string;
 }
 
 const SORT_OPTIONS: SortOption[] = [
@@ -34,9 +35,14 @@ const SORT_OPTIONS: SortOption[] = [
   {label: "Show all", value: "show_all", field: "show_all", dir: "asc"},
 ];
 
-export default function SortDropdown({onSort}: SortDropdownProps) {
+export default function SortDropdown({
+  onSort,
+  defaultValue = "show_all",
+}: SortDropdownProps) {
   const [open, setOpen] = useState(false);
-  const [selected, setSelected] = useState<SortOption>(SORT_OPTIONS[0]);
+  const [selected, setSelected] = useState<SortOption>(
+    SORT_OPTIONS.find((o) => o.value === defaultValue) ?? SORT_OPTIONS[0],
+  );
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

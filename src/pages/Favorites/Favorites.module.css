@@ -1,8 +1,12 @@
-.page-title {
-  font-family: var(--font-heading);
-  font-size: 36px;
-  font-weight: 400;
-  margin-bottom: 32px;
+.favorites-page {
+  padding-top: 64px;
+  padding-bottom: 80px;
+  min-height: calc(100vh - var(--header-h));
+  background: var(--color-bg-page);
+}
+
+.favorites-page__top {
+  margin-bottom: 24px;
 }
 
 .psych-list {
@@ -20,11 +24,7 @@
   gap: 24px;
 }
 
-.empty-favorites p { font-size: 18px; color: var(--color-text-secondary); }
-
-.empty-state {
-  text-align: center;
-  padding: 80px 20px;
+.empty-favorites p {
   font-size: 18px;
   color: var(--color-text-secondary);
 }

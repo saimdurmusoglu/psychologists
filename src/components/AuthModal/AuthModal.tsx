@@ -112,13 +112,8 @@ export default function AuthModal({mode, onClose, onSwitch}: AuthModalProps) {
           onClick={onClose}
           aria-label="Close"
         >
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path
-              d="M1 1L15 15M15 1L1 15"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-            />
+          <svg width="32" height="32" style={{color: "var(--color-text)"}}>
+            <use href="/icons/sprite.svg#icon-close" />
           </svg>
         </button>
 
@@ -141,13 +136,15 @@ export default function AuthModal({mode, onClose, onSwitch}: AuthModalProps) {
           <div className={styles["modal__fields"]}>
             {!isLogin && (
               <div className={styles["field"]}>
-                <input
-                  {...reg("name" as keyof FormData)}
-                  type="text"
-                  placeholder="Name"
-                  className={`${styles["field__input"]}${(errors as Record<string, unknown>).name ? ` ${styles["field__input--error"]}` : ""}`}
-                  autoComplete="name"
-                />
+                <div className={styles["field__row"]}>
+                  <label className={styles["field__label"]}>Name</label>
+                  <input
+                    {...reg("name" as keyof FormData)}
+                    type="text"
+                    autoComplete="name"
+                    className={`${styles["field__input"]}${(errors as Record<string, unknown>).name ? ` ${styles["field__input--error"]}` : ""}`}
+                  />
+                </div>
                 {(errors as Record<string, {message?: string}>).name && (
                   <span className={styles["field__error"]}>
                     {
@@ -160,13 +157,15 @@ export default function AuthModal({mode, onClose, onSwitch}: AuthModalProps) {
             )}
 
             <div className={styles["field"]}>
-              <input
-                {...reg("email")}
-                type="email"
-                placeholder="Email"
-                className={`${styles["field__input"]}${errors.email ? ` ${styles["field__input--error"]}` : ""}`}
-                autoComplete="email"
-              />
+              <div className={styles["field__row"]}>
+                <label className={styles["field__label"]}>Email</label>
+                <input
+                  {...reg("email")}
+                  type="email"
+                  autoComplete="email"
+                  className={`${styles["field__input"]}${errors.email ? ` ${styles["field__input--error"]}` : ""}`}
+                />
+              </div>
               {errors.email && (
                 <span className={styles["field__error"]}>
                   {errors.email.message}
@@ -175,34 +174,38 @@ export default function AuthModal({mode, onClose, onSwitch}: AuthModalProps) {
             </div>
 
             <div className={styles["field"]}>
-              <div className={styles["field__password-wrap"]}>
-                <input
-                  {...reg("password")}
-                  type={showPassword ? "text" : "password"}
-                  placeholder="Password"
-                  className={`${styles["field__input"]}${errors.password ? ` ${styles["field__input--error"]}` : ""}`}
-                  autoComplete={isLogin ? "current-password" : "new-password"}
-                />
-                <button
-                  type="button"
-                  className={styles["field__eye"]}
-                  onClick={() => setShowPassword((v) => !v)}
-                  aria-label={showPassword ? "Hide password" : "Show password"}
-                >
-                  <svg
-                    width="20"
-                    height="20"
-                    style={{color: "var(--color-text-secondary)"}}
+              <div className={styles["field__row"]}>
+                <label className={styles["field__label"]}>Password</label>
+                <div className={styles["field__input-wrap"]}>
+                  <input
+                    {...reg("password")}
+                    type={showPassword ? "text" : "password"}
+                    autoComplete={isLogin ? "current-password" : "new-password"}
+                    className={`${styles["field__input"]}${errors.password ? ` ${styles["field__input--error"]}` : ""}`}
+                  />
+                  <button
+                    type="button"
+                    className={styles["field__eye"]}
+                    onClick={() => setShowPassword((v) => !v)}
+                    aria-label={
+                      showPassword ? "Hide password" : "Show password"
+                    }
                   >
-                    <use
-                      href={
-                        showPassword
-                          ? "/icons/sprite.svg#icon-eye-on"
-                          : "/icons/sprite.svg#icon-eye-off"
-                      }
-                    />
-                  </svg>
-                </button>
+                    <svg
+                      width="20"
+                      height="20"
+                      style={{color: "var(--color-text-secondary)"}}
+                    >
+                      <use
+                        href={
+                          showPassword
+                            ? "/icons/sprite.svg#icon-eye-on"
+                            : "/icons/sprite.svg#icon-eye-off"
+                        }
+                      />
+                    </svg>
+                  </button>
+                </div>
               </div>
               {errors.password && (
                 <span className={styles["field__error"]}>

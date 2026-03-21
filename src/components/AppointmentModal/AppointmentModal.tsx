@@ -1,4 +1,4 @@
-import {useEffect, useRef} from "react";
+import {useEffect, useRef, useState} from "react";
 import {useForm} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -50,10 +50,15 @@ export default function AppointmentModal({
   onClose,
 }: AppointmentModalProps) {
   const backdropRef = useRef<HTMLDivElement>(null);
+  const timeRef = useRef<HTMLDivElement>(null);
+  const [timeOpen, setTimeOpen] = useState(false);
+  const [selectedTime, setSelectedTime] = useState("");
+
   const {
     register,
     handleSubmit,
     formState: {errors, isSubmitting},
+    setValue,
   } = useForm<FormData>({
     resolver: yupResolver(schema),
   });
@@ -70,6 +75,15 @@ export default function AppointmentModal({
     };
   }, [onClose]);
 
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (timeRef.current && !timeRef.current.contains(e.target as Node))
+        setTimeOpen(false);
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, []);
+
   const handleBackdrop = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.target === backdropRef.current) onClose();
   };
@@ -78,6 +92,12 @@ export default function AppointmentModal({
     await new Promise((r) => setTimeout(r, 800));
     toast.success("Your appointment has been scheduled!");
     onClose();
+  };
+
+  const handleTimeSelect = (t: string) => {
+    setSelectedTime(t);
+    setValue("time", t, {shouldValidate: true});
+    setTimeOpen(false);
   };
 
   return (
@@ -128,13 +148,17 @@ export default function AppointmentModal({
           className={styles["modal__form"]}
           noValidate
         >
+          <input type="hidden" {...register("time")} />
+
           <div className={styles["field"]}>
-            <input
-              {...register("name")}
-              type="text"
-              placeholder="Name"
-              className={`${styles["field__input"]}${errors.name ? ` ${styles["field__input--error"]}` : ""}`}
-            />
+            <div className={styles["field__row"]}>
+              <label className={styles["field__label"]}>Name</label>
+              <input
+                {...register("name")}
+                type="text"
+                className={`${styles["field__input"]}${errors.name ? ` ${styles["field__input--error"]}` : ""}`}
+              />
+            </div>
             {errors.name && (
               <span className={styles["field__error"]}>
                 {errors.name.message}
@@ -144,42 +168,69 @@ export default function AppointmentModal({
 
           <div className={styles["form__row"]}>
             <div className={styles["field"]}>
-              <input
-                {...register("phone")}
-                type="tel"
-                placeholder="+380"
-                className={`${styles["field__input"]}${errors.phone ? ` ${styles["field__input--error"]}` : ""}`}
-              />
+              <div className={styles["field__row"]}>
+                <label className={styles["field__label"]}>+380</label>
+                <input
+                  {...register("phone")}
+                  type="tel"
+                  className={`${styles["field__input"]}${errors.phone ? ` ${styles["field__input--error"]}` : ""}`}
+                />
+              </div>
               {errors.phone && (
                 <span className={styles["field__error"]}>
                   {errors.phone.message}
                 </span>
               )}
             </div>
+
             <div className={styles["field"]}>
-              <div className={styles["field__input-wrap"]}>
-                <select
-                  {...register("time")}
-                  defaultValue=""
-                  className={`${styles["field__input"]}${errors.time ? ` ${styles["field__input--error"]}` : ""}`}
-                >
-                  <option value="" disabled>
-                    00:00
-                  </option>
-                  {TIME_SLOTS.map((t) => (
-                    <option key={t} value={t}>
-                      {t}
-                    </option>
-                  ))}
-                </select>
-                <svg
-                  width="20"
-                  height="20"
-                  className={styles["field__icon"]}
-                  style={{color: "var(--color-text-secondary)"}}
-                >
-                  <use href="/icons/sprite.svg#icon-clock" />
-                </svg>
+              <div
+                className={`${styles["field__row"]}${errors.time ? ` ${styles["field__row--error"]}` : ""}`}
+              >
+                <div className={styles["time-picker"]} ref={timeRef}>
+                  <button
+                    type="button"
+                    className={styles["time-picker__btn"]}
+                    onClick={() => setTimeOpen((o) => !o)}
+                  >
+                    <span
+                      className={
+                        selectedTime
+                          ? styles["time-picker__value"]
+                          : styles["time-picker__placeholder"]
+                      }
+                    >
+                      {selectedTime || "00:00"}
+                    </span>
+                    <svg
+                      width="20"
+                      height="20"
+                      style={{color: "var(--color-text-secondary)"}}
+                    >
+                      <use href="/icons/sprite.svg#icon-clock" />
+                    </svg>
+                  </button>
+                  {timeOpen && (
+                    <div className={styles["time-picker__dropdown"]}>
+                      <p className={styles["time-picker__title"]}>
+                        Meeting time
+                      </p>
+                      <ul className={styles["time-picker__list"]}>
+                        {TIME_SLOTS.map((t) => (
+                          <li key={t}>
+                            <button
+                              type="button"
+                              className={`${styles["time-picker__option"]}${selectedTime === t ? ` ${styles["time-picker__option--active"]}` : ""}`}
+                              onClick={() => handleTimeSelect(t)}
+                            >
+                              {t.replace(":", " : ")}
+                            </button>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
               </div>
               {errors.time && (
                 <span className={styles["field__error"]}>
@@ -190,12 +241,14 @@ export default function AppointmentModal({
           </div>
 
           <div className={styles["field"]}>
-            <input
-              {...register("email")}
-              type="email"
-              placeholder="Email"
-              className={`${styles["field__input"]}${errors.email ? ` ${styles["field__input--error"]}` : ""}`}
-            />
+            <div className={styles["field__row"]}>
+              <label className={styles["field__label"]}>Email</label>
+              <input
+                {...register("email")}
+                type="email"
+                className={`${styles["field__input"]}${errors.email ? ` ${styles["field__input--error"]}` : ""}`}
+              />
+            </div>
             {errors.email && (
               <span className={styles["field__error"]}>
                 {errors.email.message}
@@ -204,12 +257,14 @@ export default function AppointmentModal({
           </div>
 
           <div className={styles["field"]}>
-            <textarea
-              {...register("comment")}
-              placeholder="Comment"
-              rows={4}
-              className={`${styles["field__input"]}${errors.comment ? ` ${styles["field__input--error"]}` : ""}`}
-            />
+            <div className={styles["field__row--comment"]}>
+              <label className={styles["field__label--comment"]}>Comment</label>
+              <textarea
+                {...register("comment")}
+                rows={4}
+                className={`${styles["field__input--comment"]}${errors.comment ? ` ${styles["field__input--error"]}` : ""}`}
+              />
+            </div>
             {errors.comment && (
               <span className={styles["field__error"]}>
                 {errors.comment.message}
