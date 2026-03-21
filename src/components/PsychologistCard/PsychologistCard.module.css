@@ -232,6 +232,24 @@
   margin-right: 4px;
 }
 
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 767px) {
+  .psych-card { padding: 20px; }
+  .psych-card__header { flex-direction: column; }
+  .psych-card__meta { grid-template-columns: 1fr; }
+  .psych-card__top-row { grid-column: 1; grid-row: 2; justify-content: flex-start; }
+  .psych-card__tags { grid-row: 3; }
+  .psych-card__about { grid-row: 4; }
+  .psych-card__read-more { grid-row: 5; }
+  .psych-card__expanded { grid-row: 5; }
+}
+
+@media (max-width: 575px) {
+  .psych-card__name { font-size: 20px; }
+  .psych-card__appointment-btn { width: 100%; }
+}
+
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -346,40 +364,3 @@
   background: var(--color-primary-dark);
 }
 
-@media (max-width: 768px) {
-  .psych-card__header {
-    flex-direction: column;
-  }
-  .psych-card__meta {
-    grid-template-columns: 1fr;
-  }
-  .psych-card__top-row {
-    grid-column: 1;
-    grid-row: 2;
-    justify-content: flex-start;
-  }
-  .psych-card__tags {
-    grid-row: 3;
-  }
-  .psych-card__about {
-    grid-row: 4;
-  }
-  .psych-card__read-more {
-    grid-row: 5;
-  }
-  .psych-card__expanded {
-    grid-row: 5;
-  }
-  .psych-card {
-    padding: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .psych-card__tags {
-    flex-direction: column;
-  }
-  .psych-card__name {
-    font-size: 20px;
-  }
-}

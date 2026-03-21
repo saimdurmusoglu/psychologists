@@ -4,7 +4,7 @@ import styles from './Home.module.css'
 export default function Home() {
   return (
     <section className={styles.hero}>
-      <div className={`${styles['hero__inner']} container`}>
+      <div className={styles['hero__inner']}>
         <div className={styles['hero__content']}>
           <h1 className={styles['hero__title']}>
             The road to the <em>depths</em> of the human soul

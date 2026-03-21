@@ -52,13 +52,13 @@ export default function Psychologists() {
         </ul>
 
         {loading && (
-          <div className={styles["loader-wrap"]}>
-            <div className={styles.spinner} />
+          <div className="loader-wrap">
+            <div className="spinner" />
           </div>
         )}
 
         {!loading && hasMore && psychologists.length > 0 && (
-          <div className={styles["load-more-wrap"]}>
+          <div className="load-more-wrap">
             <button
               className={styles["btn-load-more"]}
               onClick={() => fetchPsychologists(sortField, sortDir, false)}

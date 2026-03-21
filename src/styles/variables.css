@@ -1,3 +1,12 @@
+/* ===== BREAKPOINTS ===== */
+:root {
+  --bp-sm: 576px;
+  --bp-md: 768px;
+  --bp-lg: 992px;
+  --bp-xl: 1200px;
+  --bp-2xl: 1400px;
+}
+
 /* ===== THEME DEFINITIONS ===== */
 :root,
 [data-theme="green"] {
@@ -49,5 +58,5 @@
   --header-h: 96px;
   --hero-gap: 78px;
   --hero-content-top: 126px;
-  --container-w: 1184px;
 }
+

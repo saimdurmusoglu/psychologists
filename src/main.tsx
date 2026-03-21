@@ -6,8 +6,9 @@ import App from './App'
 import { AuthProvider } from './context/AuthContext'
 import { FavoritesProvider } from './context/FavoritesContext'
 import { ThemeProvider } from './context/ThemeContext'
-import './styles/variables.css'
+import './styles/normalize.css'
 import './styles/reset.css'
+import './styles/variables.css'
 import './styles/global.css'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(

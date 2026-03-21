@@ -1,8 +1,8 @@
 /* ===== LAYOUT ===== */
 .container {
-  max-width: var(--container-w);
-  margin: 0 auto;
-  padding: 0 20px;
+  width: 100%;
+  padding: 0 128px;
+  box-sizing: border-box;
 }
 
 /* ===== BUTTONS ===== */
@@ -231,9 +231,3 @@
 
 .page-loader { min-height: 100vh; display: flex; align-items: center; justify-content: center; }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-  :root { --header-h: 64px; }
-  .modal { padding: 32px 24px; }
-  .modal__title { font-size: 24px; }
-}
