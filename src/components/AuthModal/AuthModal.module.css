@@ -1,0 +1,245 @@
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(25, 26, 21, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: backdrop-in 0.2s ease;
+}
+
+@keyframes backdrop-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal {
+  background: var(--color-bg);
+  border-radius: 30px;
+  padding: 64px;
+  width: 566px;
+  position: relative;
+  animation: modal-in 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.modal--login {
+  height: 510px;
+}
+.modal--register {
+  height: 580px;
+}
+
+@keyframes modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(--color-text);
+  transition: background 0.15s;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.modal__close:hover {
+  background: rgba(25, 26, 21, 0.05);
+}
+
+.modal__header {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.modal__title {
+  font-family: "Inter", sans-serif;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 48px;
+  letter-spacing: -0.8px;
+  color: var(--color-text);
+  width: 438px;
+  height: 48px;
+}
+
+.modal__subtitle {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0;
+  color: var(--color-text);
+  width: 438px;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.modal__fields {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.field__input {
+  width: 438px;
+  height: 52px;
+  padding: 16px 18px;
+  border: 1px solid rgba(25, 26, 21, 0.1);
+  border-radius: 12px;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-text);
+  background: var(--color-bg);
+  outline: none;
+  transition: border-color 0.2s;
+}
+.field__input::placeholder {
+  color: var(--color-text-muted);
+}
+.field__input:focus {
+  border-color: var(--color-primary);
+}
+.field__input--error {
+  border-color: var(--color-error);
+}
+
+.field__password-wrap {
+  position: relative;
+  width: 438px;
+}
+
+.field__password-wrap .field__input {
+  width: 100%;
+  padding-right: 48px;
+}
+
+.field__eye {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+.field__eye:hover {
+  color: var(--color-text);
+}
+
+.field__error {
+  font-size: 12px;
+  color: var(--color-error);
+  padding-left: 4px;
+}
+
+.modal__submit {
+  width: 438px;
+  height: 52px;
+  background: var(--color-primary);
+  color: var(--color-bg);
+  border: none;
+  border-radius: 30px;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: -0.16px;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+.modal__submit:hover {
+  background: var(--color-primary-dark);
+}
+.modal__submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.modal__switch {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  text-align: center;
+}
+
+.modal__switch-btn {
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  font-size: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  .modal {
+    width: 100%;
+    max-width: 566px;
+    padding: 32px 24px;
+    height: auto;
+  }
+  .modal--login {
+    height: auto;
+  }
+  .modal--register {
+    height: auto;
+  }
+  .modal__title {
+    font-size: 28px;
+    width: 100%;
+    height: auto;
+  }
+  .modal__subtitle {
+    width: 100%;
+  }
+  .field__input {
+    width: 100%;
+  }
+  .field__password-wrap {
+    width: 100%;
+  }
+  .modal__submit {
+    width: 100%;
+  }
+}

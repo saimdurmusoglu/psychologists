@@ -1,0 +1,53 @@
+/* ===== THEME DEFINITIONS ===== */
+:root,
+[data-theme="green"] {
+  --color-primary: #54be96;
+  --color-primary-dark: #36A379;
+  --color-primary-light: #e4f7f0;
+}
+
+[data-theme="blue"] {
+  --color-primary: #3470ff;
+  --color-primary-dark: #2558e0;
+  --color-primary-light: #e8f0fe;
+}
+
+[data-theme="orange"] {
+  --color-primary: #fc832c;
+  --color-primary-dark: #e06b18;
+  --color-primary-light: #fef0e6;
+}
+
+:root {
+  --color-bg: #fbfbfb;
+  --color-bg-hero: #fbfbfb;
+  --color-bg-page: #f3f3f3;
+  --color-text: #191a15;
+  --color-text-secondary: #8a8a89;
+  --color-text-muted: #bdbdbd;
+  --color-border: #e0e0e0;
+  --color-white: #ffffff;
+  --color-card-bg: #ffffff;
+  --color-error: #e74c3c;
+  --color-star: #fbc75e;
+  --color-badge-purple: #4535af;
+  --color-badge-yellow: #fbc75e;
+  --color-online: #4caf50;
+  --color-psychologist: #2a8a89;
+  --color-price: #38cd3e;
+  --color-tag-bg: #f3f3f3;
+
+  --font-heading: "Inter", "DM Sans", sans-serif;
+  --font-body: "DM Sans", sans-serif;
+
+  --radius-card: 24px;
+  --radius-btn: 30px;
+  --radius-modal: 24px;
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.06);
+  --shadow-modal: 0 16px 48px rgba(0, 0, 0, 0.14);
+
+  --header-h: 96px;
+  --hero-gap: 78px;
+  --hero-content-top: 126px;
+  --container-w: 1184px;
+}
