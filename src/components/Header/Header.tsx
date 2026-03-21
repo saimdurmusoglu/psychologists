@@ -29,7 +29,19 @@ export default function Header() {
             <span className={styles["logo-services"]}>.services</span>
           </NavLink>
 
-          <nav className={styles["header__nav"]}>
+          <button
+            className={styles.burger}
+            onClick={() => setMenuOpen((o) => !o)}
+            aria-label="Toggle menu"
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+
+          <nav
+            className={`${styles["header__nav"]}${menuOpen ? ` ${styles.open}` : ""}`}
+          >
             <NavLink
               to="/"
               end
@@ -77,7 +89,9 @@ export default function Header() {
             )}
           </nav>
 
-          <div className={styles["header__auth"]}>
+          <div
+            className={`${styles["header__auth"]}${menuOpen ? ` ${styles.open}` : ""}`}
+          >
             {user ? (
               <>
                 <div className={styles["user-icon"]}>
@@ -115,78 +129,7 @@ export default function Header() {
               </>
             )}
           </div>
-
-          <button
-            className={styles.burger}
-            onClick={() => setMenuOpen((o) => !o)}
-            aria-label="Toggle menu"
-          >
-            <span />
-            <span />
-            <span />
-          </button>
         </div>
-
-        {menuOpen && (
-          <div className={styles["mobile-menu"]}>
-            <nav className={styles["mobile-nav"]}>
-              <NavLink to="/" end onClick={() => setMenuOpen(false)}>
-                Home
-              </NavLink>
-              <NavLink to="/psychologists" onClick={() => setMenuOpen(false)}>
-                Psychologists
-              </NavLink>
-              {user && (
-                <NavLink to="/favorites" onClick={() => setMenuOpen(false)}>
-                  Favorites
-                </NavLink>
-              )}
-            </nav>
-            <div className={styles["mobile-auth"]}>
-              {user ? (
-                <>
-                  <div className={styles["mobile-user"]}>
-                    <div className={styles["user-icon"]}>
-                      <svg width="24" height="24">
-                        <use href="/icons/sprite.svg#icon-user" />
-                      </svg>
-                    </div>
-                    <span className={styles["header__user"]}>
-                      {user.displayName ?? user.email}
-                    </span>
-                  </div>
-                  <button
-                    className={styles["btn-login"]}
-                    onClick={handleLogout}
-                  >
-                    Log out
-                  </button>
-                </>
-              ) : (
-                <>
-                  <button
-                    className={`${styles["btn-login"]} ${styles["btn-full"]}`}
-                    onClick={() => {
-                      setAuthModal("login");
-                      setMenuOpen(false);
-                    }}
-                  >
-                    Log in
-                  </button>
-                  <button
-                    className={`${styles["btn-register"]} ${styles["btn-full"]}`}
-                    onClick={() => {
-                      setAuthModal("register");
-                      setMenuOpen(false);
-                    }}
-                  >
-                    Registration
-                  </button>
-                </>
-              )}
-            </div>
-          </div>
-        )}
       </header>
 
       {authModal && (
