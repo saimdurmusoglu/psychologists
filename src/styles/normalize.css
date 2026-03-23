@@ -1,23 +1,9 @@
 /* modern-normalize.css v2.0.0 */
 
-*,
-::before,
-::after {
-  box-sizing: border-box;
-}
-
 html {
-  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
-    'Apple Color Emoji', 'Segoe UI Emoji';
-  line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -moz-tab-size: 4;
   tab-size: 4;
-}
-
-body {
-  margin: 0;
-  line-height: inherit;
 }
 
 hr {
@@ -39,8 +25,8 @@ code,
 kbd,
 samp,
 pre {
-  font-family: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo,
-    monospace;
+  font-family:
+    ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
   font-size: 1em;
 }
 
@@ -59,7 +45,6 @@ sup {
 sub {
   bottom: -0.25em;
 }
-
 sup {
   top: -0.5em;
 }
@@ -75,7 +60,6 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: inherit;
   font-size: 100%;
   line-height: 1.15;
   margin: 0;
@@ -87,19 +71,16 @@ select {
 }
 
 button,
-[type='button'],
-[type='reset'],
-[type='submit'] {
+[type="button"],
+[type="reset"],
+[type="submit"] {
   -webkit-appearance: button;
   appearance: button;
-  background-color: transparent;
-  background-image: none;
 }
 
 :-moz-focusring {
   outline: auto;
 }
-
 :-moz-ui-invalid {
   box-shadow: none;
 }
@@ -113,7 +94,7 @@ progress {
   height: auto;
 }
 
-[type='search'] {
+[type="search"] {
   -webkit-appearance: textfield;
   appearance: textfield;
   outline-offset: -2px;
@@ -153,39 +134,14 @@ fieldset {
   margin: 0;
   padding: 0;
 }
-
 legend {
   padding: 0;
-}
-
-ol,
-ul,
-menu {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-textarea {
-  resize: vertical;
-}
-
-input::placeholder,
-textarea::placeholder {
-  opacity: 1;
-  color: #9ca3af;
-}
-
-button,
-[role='button'] {
-  cursor: pointer;
 }
 
 :disabled {
   cursor: default;
 }
 
-img,
 svg,
 video,
 canvas,
@@ -196,7 +152,6 @@ object {
   display: block;
 }
 
-img,
 video {
   max-width: 100%;
   height: auto;

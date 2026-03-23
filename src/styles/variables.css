@@ -35,8 +35,6 @@
   --color-text-secondary: #8a8a89;
   --color-text-muted: #bdbdbd;
   --color-border: #e0e0e0;
-  --color-white: #ffffff;
-  --color-card-bg: #ffffff;
   --color-error: #e74c3c;
   --color-star: #fbc75e;
   --color-badge-purple: #4535af;
@@ -58,5 +56,11 @@
   --header-h: 96px;
   --hero-gap: 78px;
   --hero-content-top: 126px;
+}
+
+@media (max-width: 991px) {
+  :root {
+    --header-h: 80px;
+  }
 }
 

@@ -1,3 +1,5 @@
+/* ===== RESET ===== */
+
 *,
 *::before,
 *::after {
@@ -5,7 +7,11 @@
   margin: 0;
   padding: 0;
 }
-html { scroll-behavior: smooth; }
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-body);
   background: var(--color-bg);
@@ -14,14 +20,45 @@ body {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
 }
-img { display: block; max-width: 100%; }
-button { cursor: pointer; font-family: inherit; border: none; background: none; }
-ul { list-style: none; }
-a { text-decoration: none; color: inherit; }
-input, select, textarea {
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  background: none;
+}
+
+ul,
+ol,
+menu {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+input,
+select,
+textarea {
   font-family: inherit;
   font-size: 16px;
   outline: none;
   border: none;
   background: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--color-text-muted);
+}
+
+textarea {
+  resize: vertical;
 }

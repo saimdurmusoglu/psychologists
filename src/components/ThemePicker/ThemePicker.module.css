@@ -78,16 +78,8 @@
   background: #fc832c;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1279px) {
   .picker {
-    top: auto;
-    bottom: 20px;
-    transform: none;
-  }
-  .picker__panel {
-    right: 44px;
-    top: auto;
-    bottom: 0;
-    transform: none;
+    display: none;
   }
 }

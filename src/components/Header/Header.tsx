@@ -1,6 +1,7 @@
 import {useState} from "react";
 import {NavLink, useNavigate} from "react-router-dom";
 import {useAuth} from "../../context/AuthContext";
+import {useTheme} from "../../context/ThemeContext";
 import AuthModal from "../AuthModal/AuthModal";
 import toast from "react-hot-toast";
 import styles from "./Header.module.css";
@@ -9,6 +10,7 @@ type AuthModalMode = "login" | "register";
 
 export default function Header() {
   const {user, logout} = useAuth();
+  const {theme, setTheme} = useTheme();
   const navigate = useNavigate();
   const [authModal, setAuthModal] = useState<AuthModalMode | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -23,7 +25,7 @@ export default function Header() {
   return (
     <>
       <header className={styles.header}>
-        <div className={`${styles["header__inner"]} container`}>
+        <div className={styles["header__inner"]}>
           <NavLink to="/" className={styles["header__logo"]}>
             <span className={styles["logo-colored"]}>psychologists</span>
             <span className={styles["logo-services"]}>.services</span>
@@ -129,6 +131,15 @@ export default function Header() {
 
         {menuOpen && (
           <div className={styles["mobile-menu"]}>
+            <button
+              className={styles["mobile-close"]}
+              onClick={() => setMenuOpen(false)}
+              aria-label="Close menu"
+            >
+              <svg width="24" height="24" style={{color: "var(--color-bg)"}}>
+                <use href="/icons/sprite.svg#icon-close" />
+              </svg>
+            </button>
             <nav className={styles["mobile-nav"]}>
               <NavLink to="/" end onClick={() => setMenuOpen(false)}>
                 Home
@@ -142,6 +153,16 @@ export default function Header() {
                 </NavLink>
               )}
             </nav>
+            <div className={styles["mobile-themes"]}>
+              {(["green", "blue", "orange"] as const).map((t) => (
+                <button
+                  key={t}
+                  className={`${styles["mobile-theme-dot"]} ${styles[`mobile-theme-dot--${t}`]}${theme === t ? ` ${styles["mobile-theme-dot--active"]}` : ""}`}
+                  onClick={() => setTheme(t)}
+                  title={t.charAt(0).toUpperCase() + t.slice(1)}
+                />
+              ))}
+            </div>
             <div className={styles["mobile-auth"]}>
               {user ? (
                 <>
