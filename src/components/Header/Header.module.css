@@ -363,7 +363,7 @@
 }
 
 @media (max-width: 991px) {
-  .header__inner { padding: 0 150px; }
+  .header__inner { padding: 0 40px; }
 }
 
 @media (max-width: 767px) {

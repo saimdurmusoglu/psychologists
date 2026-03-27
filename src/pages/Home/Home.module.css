@@ -330,10 +330,82 @@
     overflow: visible;
   }
   .hero__inner {
-    flex-direction: column;
-    padding: 0 150px;
-    gap: 24px;
+    padding: 0 40px;
+    gap: 16px;
     height: auto;
+  }
+  .hero__content {
+    flex: 0 0 55%;
+    max-width: 55%;
+    padding-top: 40px;
+  }
+  .hero__visual-side {
+    flex: 0 0 42%;
+    max-width: 42%;
+    padding-top: 20px;
+    height: auto;
+  }
+  .hero__title {
+    font-size: 44px;
+    line-height: 1.1;
+  }
+  .hero__sub {
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 100%;
+  }
+  .hero__img-wrap {
+    max-width: 100%;
+    width: 100%;
+  }
+  .hero__photo {
+    width: 100%;
+    height: 320px;
+    border-radius: 12px;
+  }
+  .hero__badge--question {
+    left: -15px;
+    top: 30%;
+    width: 34px;
+    height: 34px;
+  }
+  .hero__badge--hash {
+    right: -15px;
+    top: 5%;
+    width: 38px;
+    height: 38px;
+  }
+  .hero__stat {
+    left: -15px;
+    top: auto;
+    bottom: 20px;
+    width: auto;
+    height: auto;
+    padding: 10px 12px;
+    gap: 8px;
+    white-space: normal;
+  }
+  .hero__stat-check {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+  }
+  .hero__stat-label {
+    font-size: 11px;
+  }
+  .hero__stat-num {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero {
+    padding: 32px 0;
+  }
+  .hero__inner {
+    flex-direction: column;
+    padding: 0 20px;
+    gap: 24px;
     text-align: center;
     align-items: center;
   }
@@ -356,8 +428,7 @@
     order: 1;
   }
   .hero__title {
-    font-size: 52px;
-    line-height: 1.1;
+    font-size: clamp(32px, 7vw, 44px);
     max-width: 360px;
     margin: 0 auto 24px;
   }
@@ -407,43 +478,6 @@
   }
   .hero__stat-label {
     font-size: 12px;
-  }
-  .hero__stat-num {
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 767px) {
-  .hero {
-    padding: 32px 0;
-  }
-  .hero__inner {
-    padding: 0 20px;
-    gap: 24px;
-  }
-  .hero__content {
-    max-width: 100%;
-  }
-  .hero__title {
-    font-size: clamp(32px, 7vw, 44px);
-  }
-  .hero__sub {
-    font-size: 15px;
-    line-height: 1.6;
-  }
-  .hero__photo {
-    height: 300px;
-  }
-  .hero__stat {
-    padding: 12px 16px;
-  }
-  .hero__stat-check {
-    width: 40px;
-    height: 40px;
-    min-width: 40px;
-  }
-  .hero__stat-label {
-    font-size: 13px;
   }
   .hero__stat-num {
     font-size: 16px;
