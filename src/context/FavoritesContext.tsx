@@ -33,13 +33,13 @@ export function FavoritesProvider({children}: {children: ReactNode}) {
   const [favorites, setFavoritesState] = useState<Psychologist[]>([]);
 
   useEffect(() => {
-    if (user) {
+    if (user?.uid) {
       const stored = localStorage.getItem(getStorageKey(user.uid));
       setFavoritesState(stored ? JSON.parse(stored) : []);
-    } else {
+    } else if (user === null) {
       setFavoritesState([]);
     }
-  }, [user]);
+  }, [user?.uid]);
 
   const saveFavorites = (newList: Psychologist[]) => {
     setFavoritesState(newList);

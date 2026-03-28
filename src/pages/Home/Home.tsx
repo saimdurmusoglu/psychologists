@@ -14,7 +14,7 @@ export default function Home() {
           </p>
           <Link to="/psychologists" className="btn btn--hero">
             Get started
-            <svg width="22" height="24">
+            <svg className={styles["hero__btn-icon"]}>
               <use href="/icons/sprite.svg#icon-arrow" />
             </svg>
           </Link>

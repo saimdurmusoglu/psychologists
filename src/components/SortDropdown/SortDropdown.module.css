@@ -11,7 +11,6 @@
 }
 
 .label {
-  font-family: "Inter", sans-serif;
   font-size: 13px;
   font-weight: 500;
   line-height: 18px;
@@ -34,7 +33,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-family: "Inter", sans-serif;
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
@@ -89,7 +87,6 @@
   background: none;
   border: none;
   border-radius: 8px;
-  font-family: "Inter", sans-serif;
   font-size: 15px;
   font-weight: 400;
   line-height: 20px;
@@ -119,7 +116,6 @@
   }
 
   .label {
-    font-family: "Inter", sans-serif;
     font-size: 14px;
     font-weight: 500;
     line-height: 18px;
@@ -142,7 +138,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-family: "Inter", sans-serif;
     font-size: 16px;
     font-weight: 500;
     line-height: 20px;
@@ -196,7 +191,6 @@
     background: none;
     border: none;
     border-radius: 8px;
-    font-family: "Inter", sans-serif;
     font-size: 18px;
     font-weight: 400;
     line-height: 20px;

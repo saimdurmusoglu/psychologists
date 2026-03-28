@@ -48,8 +48,7 @@
 }
 
 .hero__title {
-  font-family: "Inter", sans-serif;
-  font-size: 26px;
+  font-size: 32px;
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: -0.5px;
@@ -64,7 +63,6 @@
 }
 
 .hero__sub {
-  font-family: "Inter", sans-serif;
   font-size: 13px;
   font-weight: 500;
   line-height: 1.6;
@@ -79,17 +77,27 @@
   line-height: 20px;
 }
 
+.hero__content a.btn--hero svg {
+  width: 16px;
+  height: 18px;
+}
+
+.hero__btn-icon {
+  width: 16px;
+  height: 18px;
+}
+
 .hero__img-wrap {
   position: relative;
   width: 100%;
-  max-width: 260px;
+  max-width: 220px;
   flex-shrink: 0;
   overflow: visible;
 }
 
 .hero__photo {
   width: 100%;
-  height: 220px;
+  height: 200px;
   object-fit: cover;
   object-position: top center;
   border-radius: 10px;
@@ -108,7 +116,7 @@
   justify-content: center;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
   transform: rotate(-15deg);
-  left: -12px;
+  left: -24px;
   top: 30%;
 }
 .hero__badge--question svg {
@@ -130,8 +138,8 @@
   justify-content: center;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
   transform: rotate(15deg);
-  right: -12px;
-  top: 5%;
+  right: -28px;
+  top: 8%;
 }
 .hero__badge--hash svg {
   width: 16px;
@@ -142,8 +150,8 @@
 
 .hero__stat {
   position: absolute;
-  bottom: 12px;
-  left: -8px;
+  bottom: 25px;
+  left: -25px;
   top: auto;
   background: var(--color-primary);
   border-radius: 10px;
@@ -176,19 +184,16 @@
   color: var(--color-primary);
 }
 .hero__stat-label {
-  font-family: "Inter", sans-serif;
   font-size: 9px;
   font-weight: 400;
   color: rgba(251, 251, 251, 0.5);
   margin-bottom: 1px;
 }
 .hero__stat-num {
-  font-family: "Inter", sans-serif;
   font-size: 12px;
   font-weight: 700;
   color: var(--color-bg);
 }
-
 
 /* ============================================================
    576px — büyük telefon, tek sütun, biraz büyür
@@ -351,6 +356,14 @@
     padding: 14px 36px;
     font-size: 16px;
   }
+  .hero__content a.btn--hero svg {
+    width: 18px;
+    height: 20px;
+  }
+  .hero__btn-icon {
+    width: 18px;
+    height: 20px;
+  }
   .hero__badge--question {
     width: 36px;
     height: 36px;
@@ -447,14 +460,9 @@
     line-height: 64px;
     letter-spacing: -1.2px;
     margin-bottom: 20px;
-    width: 100%;
-    max-width: none;
-    margin-left: 0;
-    margin-right: 0;
   }
 
   .hero__sub {
-    font-size: 16px;
     line-height: 24px;
     margin-bottom: 36px;
     max-width: 420px;
@@ -463,14 +471,10 @@
   }
 
   .hero__img-wrap {
-    position: relative;
-    width: 100%;
     max-width: 100%;
-    overflow: visible;
   }
 
   .hero__photo {
-    width: 100%;
     height: 460px;
     border-radius: 10px;
   }
@@ -478,8 +482,6 @@
   .hero__badge--question {
     left: -20px;
     top: 38%;
-    width: 36px;
-    height: 36px;
   }
   .hero__badge--question svg {
     width: 9px;
@@ -498,106 +500,66 @@
   }
 
   .hero__stat {
-    position: absolute;
     top: 290px;
     left: -60px;
     bottom: auto;
     width: 210px;
-    height: auto;
     padding: 14px 16px;
     gap: 10px;
     border-radius: 14px;
-    white-space: nowrap;
   }
 
   .hero__stat-check {
-    width: 38px;
-    height: 38px;
-    min-width: 38px;
     border-radius: 10px;
   }
   .hero__stat-check svg {
     width: 22px;
     height: 22px;
   }
-  .hero__stat-label {
-    font-size: 12px;
-  }
-  .hero__stat-num {
-    font-size: 18px;
-  }
 }
 
 
 /* ============================================================
-   1440px — tam masaüstü (mevcut stiller, dokunulmadı)
+   1440px — tam masaüstü
    ============================================================ */
 
 @media (min-width: 1440px) {
   .hero {
-    background: var(--color-bg-hero);
     height: calc(100vh - var(--header-h));
     display: flex;
     align-items: flex-start;
-    position: relative;
-    overflow: hidden;
   }
 
   .hero::after {
-    content: "";
-    position: absolute;
     left: 1009px;
     top: 468px;
     width: 489px;
     height: 489px;
-    border-radius: 50%;
-    background: var(--color-primary);
-    opacity: 0.15;
-    filter: blur(1000px);
-    pointer-events: none;
-    z-index: 0;
   }
 
   .hero__inner {
-    display: flex;
-    align-items: flex-start;
     gap: 40px;
-    width: 100%;
     height: 100%;
     padding: 0 128px;
   }
 
   .hero__content {
     flex: 0 0 595px;
-    max-width: 595px;
     padding-top: var(--hero-content-top);
   }
 
   .hero__title {
-    font-family: "Inter", sans-serif;
     font-size: 80px;
-    font-weight: 600;
     line-height: 82px;
     letter-spacing: -1.6px;
-    color: var(--color-text);
     margin-bottom: 24px;
-    width: 100%;
-  }
-  .hero__title em {
-    font-style: italic;
-    color: var(--color-primary);
-    font-weight: 600;
   }
 
   .hero__sub {
-    font-family: "Inter", sans-serif;
     font-size: 18px;
-    font-weight: 500;
     line-height: 24px;
     letter-spacing: -0.36px;
-    color: var(--color-text);
     margin-bottom: 40px;
-    width: 100%;
     max-width: 510px;
   }
 
@@ -606,122 +568,77 @@
     font-size: 16px;
     line-height: 20px;
   }
+  .hero__content a.btn--hero svg {
+    width: 22px;
+    height: 24px;
+  }
+  .hero__btn-icon {
+    width: 22px;
+    height: 24px;
+  }
 
   .hero__visual-side {
     flex: 0 0 549px;
     max-width: 549px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-end;
     padding-top: var(--hero-gap);
-    height: 100%;
   }
 
   .hero__img-wrap {
-    position: relative;
-    width: 100%;
     max-width: 464px;
     flex-shrink: 0;
   }
 
   .hero__photo {
-    width: 100%;
     height: 526px;
-    object-fit: cover;
-    object-position: top center;
-    border-radius: 10px;
-    display: block;
   }
 
   .hero__badge--question {
-    position: absolute;
-    z-index: 2;
     width: 40px;
     height: 40px;
-    border-radius: 10px;
-    background: var(--color-badge-purple);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-    transform: rotate(-15deg);
     left: -35px;
     top: calc(263px - var(--hero-gap));
   }
   .hero__badge--question svg {
     width: 10px;
     height: 17px;
-    color: white;
-    transform: rotate(15deg);
   }
 
   .hero__badge--hash {
-    position: absolute;
-    z-index: 2;
     width: 48px;
     height: 48px;
-    border-radius: 10px;
-    background: var(--color-badge-yellow);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-    transform: rotate(15deg);
     right: -40px;
     top: calc(116px - var(--hero-gap));
   }
   .hero__badge--hash svg {
     width: 25px;
     height: 25px;
-    color: white;
-    transform: rotate(-15deg);
   }
 
   .hero__stat {
     position: absolute;
     top: 332px;
     left: -101px;
-    background: var(--color-primary);
     border-radius: 16px;
     padding: 32px;
-    display: flex;
-    align-items: center;
     gap: 14px;
-    color: var(--color-bg);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
     width: 311px;
     height: 118px;
-    z-index: 2;
-    white-space: nowrap;
   }
 
   .hero__stat-check {
     width: 54px;
     height: 54px;
     min-width: 54px;
-    background: var(--color-bg);
     border-radius: 13px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
   }
   .hero__stat-check svg {
     width: 30px;
     height: 30px;
-    color: var(--color-primary);
   }
   .hero__stat-label {
-    font-family: "Inter", sans-serif;
     font-size: 16px;
-    font-weight: 400;
-    color: rgba(251, 251, 251, 0.5);
-    margin-bottom: 2px;
   }
   .hero__stat-num {
-    font-family: "Inter", sans-serif;
     font-size: 24px;
-    font-weight: 700;
-    color: var(--color-bg);
   }
 }

@@ -78,7 +78,6 @@
 
 .psych-card__label {
   display: block;
-  font-family: "Inter", sans-serif;
   font-size: 13px;
   font-weight: 500;
   line-height: 20px;
@@ -87,7 +86,6 @@
 }
 
 .psych-card__name {
-  font-family: "Inter", sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 20px;
@@ -116,7 +114,6 @@
 .psych-card__about {
   grid-column: 1 / -1;
   grid-row: 3;
-  font-family: "Inter", sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 18px;
@@ -163,7 +160,6 @@
   display: flex;
   align-items: center;
   gap: 3px;
-  font-family: "Inter", sans-serif;
   font-size: 13px;
   font-weight: 500;
   line-height: 20px;
@@ -182,7 +178,6 @@
 }
 
 .psych-card__price-inline {
-  font-family: "Inter", sans-serif;
   font-size: 13px;
   font-weight: 500;
   line-height: 20px;
@@ -220,7 +215,6 @@
   height: 30px;
   background: var(--color-tag-bg);
   border-radius: 24px;
-  font-family: "Inter", sans-serif;
   font-size: 13px;
   font-weight: 500;
   line-height: 20px;
@@ -271,7 +265,6 @@
   border-radius: 50%;
   background: rgba(84, 190, 150, 0.2);
   color: var(--color-primary);
-  font-family: "Inter", sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
@@ -290,7 +283,6 @@
 }
 
 .review__name {
-  font-family: "Inter", sans-serif;
   font-weight: 500;
   font-size: 14px;
   line-height: 18px;
@@ -306,7 +298,6 @@
 }
 
 .review__rating-value {
-  font-family: "Inter", sans-serif;
   font-weight: 500;
   font-size: 13px;
   line-height: 18px;
@@ -315,7 +306,6 @@
 }
 
 .review__comment {
-  font-family: "Inter", sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 18px;
@@ -335,7 +325,6 @@
   color: var(--color-bg);
   border: none;
   border-radius: 30px;
-  font-family: "Inter", sans-serif;
   font-size: 15px;
   font-weight: 500;
   line-height: 20px;
@@ -603,7 +592,6 @@
 
   .psych-card__label {
     display: block;
-    font-family: "Inter", sans-serif;
     font-size: 16px;
     font-weight: 500;
     line-height: 24px;
@@ -612,7 +600,6 @@
   }
 
   .psych-card__name {
-    font-family: "Inter", sans-serif;
     font-size: 24px;
     font-weight: 500;
     line-height: 24px;
@@ -641,7 +628,6 @@
   .psych-card__about {
     grid-column: 1 / -1;
     grid-row: 3;
-    font-family: "Inter", sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 20px;
@@ -688,7 +674,6 @@
     display: flex;
     align-items: center;
     gap: 4px;
-    font-family: "Inter", sans-serif;
     font-size: 16px;
     font-weight: 500;
     line-height: 24px;
@@ -707,7 +692,6 @@
   }
 
   .psych-card__price-inline {
-    font-family: "Inter", sans-serif;
     font-size: 16px;
     font-weight: 500;
     line-height: 24px;
@@ -747,7 +731,6 @@
     height: 40px;
     background: var(--color-tag-bg);
     border-radius: 24px;
-    font-family: "Inter", sans-serif;
     font-size: 16px;
     font-weight: 500;
     line-height: 24px;
@@ -798,7 +781,6 @@
     border-radius: 50%;
     background: rgba(84, 190, 150, 0.2);
     color: var(--color-primary);
-    font-family: "Inter", sans-serif;
     font-weight: 500;
     font-size: 20px;
     line-height: 20px;
@@ -817,7 +799,6 @@
   }
 
   .review__name {
-    font-family: "Inter", sans-serif;
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;
@@ -833,7 +814,6 @@
   }
 
   .review__rating-value {
-    font-family: "Inter", sans-serif;
     font-weight: 500;
     font-size: 14px;
     line-height: 18px;
@@ -842,7 +822,6 @@
   }
 
   .review__comment {
-    font-family: "Inter", sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 20px;
@@ -862,7 +841,6 @@
     color: var(--color-bg);
     border: none;
     border-radius: 30px;
-    font-family: "Inter", sans-serif;
     font-size: 16px;
     font-weight: 500;
     line-height: 20px;
