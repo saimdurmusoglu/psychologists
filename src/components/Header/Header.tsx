@@ -130,7 +130,12 @@ export default function Header() {
         </div>
 
         {menuOpen && (
-          <div className={styles["mobile-menu"]}>
+          <>
+            <div
+              className={styles["mobile-overlay"]}
+              onClick={() => setMenuOpen(false)}
+            />
+            <div className={styles["mobile-menu"]}>
             <button
               className={styles["mobile-close"]}
               onClick={() => setMenuOpen(false)}
@@ -207,6 +212,7 @@ export default function Header() {
               )}
             </div>
           </div>
+          </>
         )}
       </header>
 

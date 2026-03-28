@@ -85,25 +85,23 @@ textarea::placeholder {
 }
 
 @media (min-width: 576px) {
-  .btn--hero {
-    padding: 12px 28px;
-    font-size: 15px;
-  }
+  .btn--hero { padding: 12px 28px; font-size: 15px; }
 }
 
 @media (min-width: 768px) {
-  .btn--hero {
-    padding: 14px 36px;
-    font-size: 16px;
-  }
+  .btn--hero { padding: 15px 36px; font-size: 16px; }
+}
+
+@media (min-width: 992px) {
+  .btn--hero { padding: 16px 40px; font-size: 18px; }
+}
+
+@media (min-width: 1280px) {
+  .btn--hero { padding: 14px 36px; font-size: 16px; }
 }
 
 @media (min-width: 1440px) {
-  .btn--hero {
-    padding: 18px 50px;
-    font-size: 20px;
-    line-height: 24px;
-  }
+  .btn--hero { padding: 18px 50px; font-size: 20px; line-height: 24px; }
 }
 
 .btn--full {
