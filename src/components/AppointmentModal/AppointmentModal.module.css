@@ -1,3 +1,7 @@
+/* ============================================================
+   BASE — 320px (mobile-first)
+   ============================================================ */
+
 .modal-backdrop {
   position: fixed;
   inset: 0;
@@ -6,26 +10,22 @@
   align-items: center;
   justify-content: center;
   z-index: 1000;
-  padding: 20px;
+  padding: 16px;
   animation: backdrop-in 0.2s ease;
 }
 
 @keyframes backdrop-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 .modal {
   background: var(--color-bg);
-  border-radius: 30px;
-  padding: 64px;
+  border-radius: 20px;
+  padding: 28px 16px;
   width: 100%;
-  max-width: 600px;
-  max-height: 90vh;
+  max-width: 100%;
+  max-height: 95vh;
   overflow-y: auto;
   position: relative;
   animation: modal-in 0.25s ease;
@@ -35,22 +35,16 @@
 }
 
 @keyframes modal-in {
-  from {
-    opacity: 0;
-    transform: translateY(20px) scale(0.97);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+  from { opacity: 0; transform: translateY(20px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1);       }
 }
 
 .modal__close {
   position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 32px;
-  height: 32px;
+  top: 16px;
+  right: 16px;
+  width: 28px;
+  height: 28px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -67,36 +61,36 @@
 
 .modal__title {
   font-family: "Inter", sans-serif;
-  font-size: 40px;
+  font-size: 24px;
   font-weight: 500;
-  line-height: 48px;
-  letter-spacing: -0.8px;
+  line-height: 30px;
+  letter-spacing: -0.5px;
   color: var(--color-text);
-  margin: 0 0 20px 0;
-  padding-right: 40px;
+  margin: 0 0 12px 0;
+  padding-right: 36px;
 }
 
 .modal__subtitle {
   font-family: "Inter", sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
-  line-height: 20px;
+  line-height: 18px;
   letter-spacing: 0;
   color: rgba(25, 26, 21, 0.5);
-  margin: 0 0 40px 0;
+  margin: 0 0 24px 0;
 }
 
 .appointment-doctor {
   display: flex;
   align-items: center;
-  gap: 14px;
-  margin-bottom: 40px;
+  gap: 12px;
+  margin-bottom: 24px;
 }
 
 .appointment-doctor__img {
-  width: 44px;
-  height: 44px;
-  border-radius: 15px;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
   object-fit: cover;
   flex-shrink: 0;
   background: #e0e0e0;
@@ -104,20 +98,20 @@
 
 .appointment-doctor__label {
   font-family: "Inter", sans-serif;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 500;
   line-height: 16px;
   letter-spacing: 0;
   color: var(--color-text-secondary);
   display: block;
-  margin-bottom: 4px;
+  margin-bottom: 3px;
 }
 
 .appointment-doctor__name {
   font-family: "Inter", sans-serif;
   font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 14px;
+  line-height: 20px;
   letter-spacing: 0;
   color: var(--color-text);
   margin: 0;
@@ -126,13 +120,14 @@
 .modal__form {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
 }
 
+/* Tek sütun mobilde */
 .form__row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
+  grid-template-columns: 1fr;
+  gap: 12px;
 }
 
 .field {
@@ -141,7 +136,6 @@
   gap: 4px;
 }
 
-/* Normal yatay field__row */
 .field__row {
   display: flex;
   align-items: center;
@@ -163,25 +157,25 @@
 
 .field__label {
   font-family: "Inter", sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 20px;
   letter-spacing: 0;
   color: var(--color-text);
   white-space: nowrap;
-  padding: 16px 0 16px 18px;
-  min-width: 90px;
+  padding: 14px 0 14px 14px;
+  min-width: 80px;
   flex-shrink: 0;
 }
 
 .field__input {
   flex: 1;
   width: 100%;
-  height: 52px;
-  padding: 16px 18px 16px 12px;
+  height: 48px;
+  padding: 14px 14px 14px 10px;
   border: none;
   font-family: "Inter", sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 20px;
   letter-spacing: 0;
@@ -201,7 +195,6 @@
   padding-left: 4px;
 }
 
-/* Comment field — dikey yapı */
 .field__row--comment {
   display: flex;
   flex-direction: column;
@@ -211,7 +204,7 @@
   background: var(--color-bg);
   transition: border-color 0.2s;
   width: 100%;
-  height: 116px;
+  height: 100px;
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -224,22 +217,22 @@
 
 .field__label--comment {
   font-family: "Inter", sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 20px;
   letter-spacing: 0;
   color: var(--color-text);
-  padding: 16px 18px 0 18px;
+  padding: 12px 14px 0 14px;
   flex-shrink: 0;
 }
 
 .field__input--comment {
   width: 100%;
   flex: 1;
-  padding: 8px 18px 16px 18px;
+  padding: 6px 14px 12px 14px;
   border: none;
   font-family: "Inter", sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 20px;
   letter-spacing: 0;
@@ -259,11 +252,11 @@
 
 .time-picker__btn {
   width: 100%;
-  height: 52px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 18px 16px 12px;
+  padding: 14px 14px 14px 10px;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -273,7 +266,7 @@
 
 .time-picker__value {
   font-family: "Inter", sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 20px;
   color: var(--color-text);
@@ -281,7 +274,7 @@
 
 .time-picker__placeholder {
   font-family: "Inter", sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 20px;
   color: rgba(25, 26, 21, 0.3);
@@ -291,23 +284,23 @@
   position: absolute;
   top: calc(100% + 8px);
   right: 0;
-  width: 151px;
+  width: 140px;
   background: var(--color-bg);
   border-radius: 12px;
   box-shadow: 0 4px 32px rgba(0, 0, 0, 0.12);
   z-index: 200;
-  padding: 16px 0;
+  padding: 12px 0;
 }
 
 .time-picker__title {
   font-family: "Inter", sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
-  line-height: 24px;
+  line-height: 20px;
   letter-spacing: 0;
   color: var(--color-text);
-  margin: 0 0 16px 0;
-  padding: 0 16px;
+  margin: 0 0 12px 0;
+  padding: 0 12px;
 }
 
 .time-picker__list {
@@ -317,7 +310,7 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  max-height: 160px;
+  max-height: 140px;
   overflow-y: auto;
 }
 
@@ -326,9 +319,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4px 32px;
+  padding: 4px 24px;
   font-family: "Inter", sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   line-height: 20px;
   letter-spacing: 0;
@@ -347,21 +340,21 @@
 }
 
 .modal__submit {
-  width: 472px;
-  height: 52px;
-  padding: 16px 0;
+  width: 100%;
+  height: 48px;
+  padding: 14px 0;
   background: var(--color-primary);
   color: var(--color-bg);
   border: none;
   border-radius: 30px;
   font-family: "Inter", sans-serif;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 400;
   line-height: 20px;
   letter-spacing: -0.16px;
   cursor: pointer;
   transition: background 0.2s;
-  margin-top: 40px;
+  margin-top: 24px;
   text-align: center;
   display: flex;
   align-items: center;
@@ -375,12 +368,453 @@
   cursor: not-allowed;
 }
 
-/* ===== RESPONSIVE ===== */
 
-@media (max-width: 767px) {
-  .modal { padding: 32px 24px; }
-  .modal__title { font-size: 28px; line-height: 36px; }
-  .form__row { grid-template-columns: 1fr; }
-  .modal__submit { width: 100%; }
+/* ============================================================
+   576px — iki sütun geri döner
+   ============================================================ */
+
+@media (min-width: 576px) {
+  .modal {
+    padding: 36px 24px;
+    border-radius: 24px;
+    max-width: 480px;
+  }
+  .modal__title {
+    font-size: 28px;
+    line-height: 34px;
+    margin-bottom: 14px;
+  }
+  .modal__subtitle {
+    font-size: 15px;
+    margin-bottom: 28px;
+  }
+  .form__row {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .modal__form {
+    gap: 14px;
+  }
 }
 
+
+/* ============================================================
+   768px
+   ============================================================ */
+
+@media (min-width: 768px) {
+  .modal {
+    padding: 48px 36px;
+    border-radius: 28px;
+    max-width: 540px;
+  }
+  .modal__title {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+  .modal__close {
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+  }
+  .appointment-doctor {
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+  .appointment-doctor__img {
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+  }
+  .appointment-doctor__name {
+    font-size: 15px;
+  }
+  .field__label {
+    font-size: 15px;
+    padding: 15px 0 15px 16px;
+  }
+  .field__input {
+    font-size: 15px;
+  }
+  .modal__form {
+    gap: 16px;
+  }
+  .modal__submit {
+    margin-top: 32px;
+  }
+}
+
+
+/* ============================================================
+   1440px — tam masaüstü (mevcut stiller, dokunulmadı)
+   ============================================================ */
+
+@media (min-width: 1440px) {
+  .modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(25, 26, 21, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+    animation: backdrop-in 0.2s ease;
+  }
+
+  @keyframes backdrop-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  .modal {
+    background: var(--color-bg);
+    border-radius: 30px;
+    padding: 64px;
+    width: 100%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    animation: modal-in 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+
+  @keyframes modal-in {
+    from { opacity: 0; transform: translateY(20px) scale(0.97); }
+    to   { opacity: 1; transform: translateY(0) scale(1);       }
+  }
+
+  .modal__close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: opacity 0.15s;
+  }
+  .modal__close:hover {
+    opacity: 0.6;
+  }
+
+  .modal__title {
+    font-family: "Inter", sans-serif;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 48px;
+    letter-spacing: -0.8px;
+    color: var(--color-text);
+    margin: 0 0 20px 0;
+    padding-right: 40px;
+  }
+
+  .modal__subtitle {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0;
+    color: rgba(25, 26, 21, 0.5);
+    margin: 0 0 40px 0;
+  }
+
+  .appointment-doctor {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 40px;
+  }
+
+  .appointment-doctor__img {
+    width: 44px;
+    height: 44px;
+    border-radius: 15px;
+    object-fit: cover;
+    flex-shrink: 0;
+    background: #e0e0e0;
+  }
+
+  .appointment-doctor__label {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0;
+    color: var(--color-text-secondary);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .appointment-doctor__name {
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0;
+    color: var(--color-text);
+    margin: 0;
+  }
+
+  .modal__form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .form__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  /* Normal yatay field__row */
+  .field__row {
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(25, 26, 21, 0.1);
+    border-radius: 12px;
+    overflow: visible;
+    background: var(--color-bg);
+    transition: border-color 0.2s;
+  }
+  .field__row:focus-within {
+    border-color: var(--color-primary);
+  }
+  .field__row:has(.field__input--error) {
+    border-color: var(--color-error);
+  }
+  .field__row--error {
+    border-color: var(--color-error);
+  }
+
+  .field__label {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0;
+    color: var(--color-text);
+    white-space: nowrap;
+    padding: 16px 0 16px 18px;
+    min-width: 90px;
+    flex-shrink: 0;
+  }
+
+  .field__input {
+    flex: 1;
+    width: 100%;
+    height: 52px;
+    padding: 16px 18px 16px 12px;
+    border: none;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0;
+    color: var(--color-text);
+    background: transparent;
+    outline: none;
+    appearance: none;
+    box-sizing: border-box;
+  }
+  .field__input--error {
+    border-color: var(--color-error);
+  }
+
+  .field__error {
+    font-size: 12px;
+    color: var(--color-error);
+    padding-left: 4px;
+  }
+
+  /* Comment field — dikey yapı */
+  .field__row--comment {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid rgba(25, 26, 21, 0.1);
+    border-radius: 12px;
+    background: var(--color-bg);
+    transition: border-color 0.2s;
+    width: 100%;
+    height: 116px;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  .field__row--comment:focus-within {
+    border-color: var(--color-primary);
+  }
+  .field__row--comment:has(.field__input--error) {
+    border-color: var(--color-error);
+  }
+
+  .field__label--comment {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0;
+    color: var(--color-text);
+    padding: 16px 18px 0 18px;
+    flex-shrink: 0;
+  }
+
+  .field__input--comment {
+    width: 100%;
+    flex: 1;
+    padding: 8px 18px 16px 18px;
+    border: none;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0;
+    color: var(--color-text);
+    background: transparent;
+    outline: none;
+    resize: none;
+    box-sizing: border-box;
+  }
+
+  /* Time Picker */
+  .time-picker {
+    position: relative;
+    flex: 1;
+    width: 100%;
+  }
+
+  .time-picker__btn {
+    width: 100%;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 18px 16px 12px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    border-radius: 12px;
+  }
+
+  .time-picker__value {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    color: var(--color-text);
+  }
+
+  .time-picker__placeholder {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    color: rgba(25, 26, 21, 0.3);
+  }
+
+  .time-picker__dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    width: 151px;
+    background: var(--color-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 32px rgba(0, 0, 0, 0.12);
+    z-index: 200;
+    padding: 16px 0;
+  }
+
+  .time-picker__title {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0;
+    color: var(--color-text);
+    margin: 0 0 16px 0;
+    padding: 0 16px;
+  }
+
+  .time-picker__list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 160px;
+    overflow-y: auto;
+  }
+
+  .time-picker__option {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 32px;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0;
+    color: rgba(25, 26, 21, 0.3);
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.15s;
+    white-space: nowrap;
+  }
+  .time-picker__option:hover {
+    color: var(--color-text);
+  }
+  .time-picker__option--active {
+    color: var(--color-text);
+  }
+
+  .modal__submit {
+    width: 472px;
+    height: 52px;
+    padding: 16px 0;
+    background: var(--color-primary);
+    color: var(--color-bg);
+    border: none;
+    border-radius: 30px;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: -0.16px;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 40px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .modal__submit:hover {
+    background: var(--color-primary-dark);
+  }
+  .modal__submit:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+}

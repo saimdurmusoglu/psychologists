@@ -1,10 +1,9 @@
 /* ===== BREAKPOINTS ===== */
 :root {
-  --bp-sm: 576px;
-  --bp-md: 768px;
-  --bp-lg: 992px;
-  --bp-xl: 1200px;
-  --bp-2xl: 1400px;
+  --bp-sm: 575px;
+  --bp-md: 767px;
+  --bp-lg: 991px;
+  --bp-xl: 1279px;
 }
 
 /* ===== THEME DEFINITIONS ===== */
@@ -43,6 +42,7 @@
   --color-psychologist: #2a8a89;
   --color-price: #38cd3e;
   --color-tag-bg: #f3f3f3;
+  --color-white: #ffffff;
 
   --font-heading: "Inter", "DM Sans", sans-serif;
   --font-body: "DM Sans", sans-serif;
@@ -58,9 +58,4 @@
   --hero-content-top: 126px;
 }
 
-@media (max-width: 991px) {
-  :root {
-    --header-h: 80px;
-  }
-}
 

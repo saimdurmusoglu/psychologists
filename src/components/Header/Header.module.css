@@ -1,3 +1,8 @@
+/* ============================================================
+   BASE — 320px (mobile-first)
+   burger görünür, nav/auth gizli, mobile menu her zaman aktif
+   ============================================================ */
+
 .header {
   position: sticky;
   top: 0;
@@ -8,17 +13,17 @@
 
 .header__inner {
   width: 100%;
-  padding: 0 128px;
+  padding: 0 16px;
   display: flex;
   align-items: center;
-  height: var(--header-h);
+  height: 64px;
 }
 
 .header__logo {
   display: flex;
   align-items: center;
   font-family: "Inter", sans-serif;
-  font-size: 20px;
+  font-size: 17px;
   line-height: 24px;
   letter-spacing: -0.4px;
   white-space: nowrap;
@@ -34,30 +39,14 @@
   font-weight: 600;
 }
 
+/* Nav gizli mobilde */
 .header__nav {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-  margin-left: 130px;
-  flex-shrink: 0;
+  display: none;
 }
 
-.header__nav a {
-  display: block;
-  font-family: "Inter", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  color: var(--color-text);
-  transition: color 0.2s;
-  text-decoration: none;
-}
-.header__nav a:hover {
-  color: var(--color-primary);
-}
 .nav-link--active {
   color: var(--color-text) !important;
 }
-
 .nav-item {
   display: block;
   position: relative;
@@ -76,17 +65,14 @@
   background: var(--color-primary);
 }
 
+/* Auth gizli mobilde */
 .header__auth {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-left: auto;
-  flex-shrink: 0;
+  display: none;
 }
 
 .user-icon {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border-radius: 10px;
   background: var(--color-primary);
   display: flex;
@@ -95,14 +81,14 @@
   flex-shrink: 0;
 }
 .user-icon svg {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   color: var(--color-bg);
 }
 
 .header__user {
   font-family: "Inter", sans-serif;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
   color: var(--color-text);
 }
@@ -111,14 +97,14 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 48px;
-  padding: 14px 28px;
+  height: 40px;
+  padding: 10px 20px;
   border-radius: 30px;
   border: 1px solid rgba(25, 26, 21, 0.1);
   background: transparent;
   color: var(--color-text);
   font-family: "Inter", sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s;
@@ -134,14 +120,14 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 48px;
-  padding: 14px 28px;
+  height: 40px;
+  padding: 10px 20px;
   border-radius: 30px;
   border: none;
   background: var(--color-primary);
   color: var(--color-bg);
   font-family: "Inter", sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s;
@@ -151,8 +137,9 @@
   background: var(--color-primary-dark);
 }
 
+/* Burger görünür mobilde */
 .burger {
-  display: none;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 5px;
@@ -170,7 +157,10 @@
   border-radius: 2px;
 }
 
-/* Mobile menu */
+/* ============================================================
+   MOBİL MENÜ — her ekran boyutunda çalışır (JS ile açılır)
+   ============================================================ */
+
 .mobile-menu {
   position: fixed;
   top: 0;
@@ -188,12 +178,8 @@
 }
 
 @keyframes slide-in {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(0);
-  }
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0);    }
 }
 
 .mobile-close {
@@ -269,6 +255,7 @@
   background: var(--color-bg);
   color: var(--color-text);
   border: 1px solid var(--color-border);
+  height: auto;
 }
 .mobile-menu .btn-login:hover {
   background: var(--color-bg);
@@ -284,6 +271,7 @@
   background: var(--color-bg);
   color: var(--color-text);
   border: 1px solid var(--color-border);
+  height: auto;
 }
 .mobile-menu .btn-register:hover {
   background: var(--color-bg);
@@ -306,9 +294,7 @@
   height: 28px;
   border-radius: 50%;
   border: 2px solid transparent;
-  transition:
-    transform 0.2s,
-    border-color 0.2s;
+  transition: transform 0.2s, border-color 0.2s;
 }
 .mobile-theme-dot:hover {
   transform: scale(1.2);
@@ -316,58 +302,439 @@
 .mobile-theme-dot--active {
   border-color: var(--color-bg);
 }
-.mobile-theme-dot--green {
-  background: #54be96;
-}
-.mobile-theme-dot--blue {
-  background: #3470ff;
-}
-.mobile-theme-dot--orange {
-  background: #fc832c;
-}
+.mobile-theme-dot--green  { background: #54be96; }
+.mobile-theme-dot--blue   { background: #3470ff; }
+.mobile-theme-dot--orange { background: #fc832c; }
 
-/* ===== RESPONSIVE ===== */
 
-@media (max-width: 1399px) {
-  .header__inner {
-    padding: 0 80px;
-  }
-  .header__nav {
-    margin-left: 60px;
-  }
-}
+/* ============================================================
+   576px — büyük telefon
+   ============================================================ */
 
-@media (max-width: 1279px) {
-  .header__inner {
-    padding: 0 150px;
-  }
-  .header__nav {
-    margin-left: 50px;
-    gap: 20px;
-  }
-}
-
-@media (max-width: 1200px) {
-  .header__inner {
-    padding: 0 80px;
-  }
-  .burger {
-    display: flex;
-  }
-  .header__nav {
-    display: none;
-  }
-  .header__auth {
-    display: none;
-  }
-}
-
-@media (max-width: 991px) {
-  .header__inner { padding: 0 40px; }
-}
-
-@media (max-width: 767px) {
+@media (min-width: 576px) {
   .header__inner {
     padding: 0 20px;
   }
+  .header__logo {
+    font-size: 18px;
+  }
+}
+
+
+/* ============================================================
+   768px — tablet
+   ============================================================ */
+
+@media (min-width: 768px) {
+  .header__inner {
+    padding: 0 32px;
+    height: 72px;
+  }
+  .header__logo {
+    font-size: 19px;
+  }
+}
+
+
+/* ============================================================
+   992px — küçük masaüstü, burger hâlâ görünür
+   ============================================================ */
+
+@media (min-width: 992px) {
+  .header__inner {
+    padding: 0 40px;
+    height: 80px;
+  }
+  .header__logo {
+    font-size: 20px;
+  }
+}
+
+
+/* ============================================================
+   1280px — orta masaüstü, nav + auth görünür, burger gizlenir
+   ============================================================ */
+
+@media (min-width: 1280px) {
+  .header__inner {
+    padding: 0 80px;
+    height: 88px;
+  }
+
+  .burger {
+    display: none;
+  }
+
+  .header__nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-left: 80px;
+    flex-shrink: 0;
+  }
+
+  .header__nav a {
+    display: block;
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--color-text);
+    transition: color 0.2s;
+    text-decoration: none;
+  }
+  .header__nav a:hover {
+    color: var(--color-primary);
+  }
+
+  .header__auth {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+
+  .user-icon {
+    width: 38px;
+    height: 38px;
+  }
+  .user-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .btn-login {
+    height: 44px;
+    padding: 12px 22px;
+    font-size: 15px;
+  }
+
+  .btn-register {
+    height: 44px;
+    padding: 12px 22px;
+    font-size: 15px;
+  }
+}
+
+
+/* ============================================================
+   1440px — tam masaüstü (mevcut stiller, dokunulmadı)
+   ============================================================ */
+
+@media (min-width: 1440px) {
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--color-bg);
+    border-bottom: 1px solid rgba(25, 26, 21, 0.1);
+  }
+
+  .header__inner {
+    width: 100%;
+    padding: 0 128px;
+    display: flex;
+    align-items: center;
+    height: var(--header-h);
+  }
+
+  .header__logo {
+    display: flex;
+    align-items: center;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.4px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    text-decoration: none;
+  }
+  .logo-colored {
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+  .logo-services {
+    color: var(--color-text);
+    font-weight: 600;
+  }
+
+  .header__nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-left: 130px;
+    flex-shrink: 0;
+  }
+
+  .header__nav a {
+    display: block;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--color-text);
+    transition: color 0.2s;
+    text-decoration: none;
+  }
+  .header__nav a:hover {
+    color: var(--color-primary);
+  }
+  .nav-link--active {
+    color: var(--color-text) !important;
+  }
+
+  .nav-item {
+    display: block;
+    position: relative;
+  }
+  .nav-text {
+    display: block;
+  }
+  .nav-dot {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-primary);
+  }
+
+  .header__auth {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+
+  .user-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .user-icon svg {
+    width: 24px;
+    height: 24px;
+    color: var(--color-bg);
+  }
+
+  .header__user {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--color-text);
+  }
+
+  .btn-login {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    padding: 14px 28px;
+    border-radius: 30px;
+    border: 1px solid rgba(25, 26, 21, 0.1);
+    background: transparent;
+    color: var(--color-text);
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .btn-login:hover {
+    background: var(--color-primary);
+    color: var(--color-white);
+    border-color: var(--color-primary);
+  }
+
+  .btn-register {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    padding: 14px 28px;
+    border-radius: 30px;
+    border: none;
+    background: var(--color-primary);
+    color: var(--color-bg);
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .btn-register:hover {
+    background: var(--color-primary-dark);
+  }
+
+  .burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    margin-left: auto;
+    padding: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .burger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--color-text);
+    border-radius: 2px;
+  }
+
+  /* Mobile menu */
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: auto;
+    min-width: 280px;
+    height: 100vh;
+    background: var(--color-primary);
+    z-index: 200;
+    padding: 24px 32px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: -8px 0 32px rgba(0, 0, 0, 0.15);
+    animation: slide-in 0.25s ease;
+  }
+
+  @keyframes slide-in {
+    from { transform: translateX(100%); }
+    to   { transform: translateX(0);    }
+  }
+
+  .mobile-close {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-bg);
+  }
+
+  .mobile-menu .mobile-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 60px;
+  }
+
+  .mobile-menu .mobile-nav a {
+    color: var(--color-bg);
+    font-size: 20px;
+    font-weight: 500;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .mobile-menu .mobile-nav a:hover {
+    opacity: 0.8;
+  }
+
+  .mobile-menu .mobile-auth {
+    margin-top: 0;
+    margin-bottom: 40px;
+    background: transparent;
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .mobile-menu .mobile-user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .mobile-menu .user-icon {
+    background: rgba(255, 255, 255, 0.2);
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .mobile-menu .header__user {
+    color: var(--color-bg);
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .mobile-menu .btn-login {
+    width: 100%;
+    text-align: center;
+    border-radius: var(--radius-btn);
+    padding: 12px;
+    font-size: 15px;
+    background: var(--color-bg);
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+  }
+  .mobile-menu .btn-login:hover {
+    background: var(--color-bg);
+    border-color: var(--color-text);
+  }
+
+  .mobile-menu .btn-register {
+    width: 100%;
+    text-align: center;
+    border-radius: var(--radius-btn);
+    padding: 12px;
+    font-size: 15px;
+    background: var(--color-bg);
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+  }
+  .mobile-menu .btn-register:hover {
+    background: var(--color-bg);
+    border-color: var(--color-text);
+  }
+
+  .mobile-themes {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    justify-content: center;
+    padding: 16px 0;
+    border: none;
+    margin-top: auto;
+    margin-bottom: 0;
+  }
+
+  .mobile-theme-dot {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .mobile-theme-dot:hover {
+    transform: scale(1.2);
+  }
+  .mobile-theme-dot--active {
+    border-color: var(--color-bg);
+  }
+  .mobile-theme-dot--green  { background: #54be96; }
+  .mobile-theme-dot--blue   { background: #3470ff; }
+  .mobile-theme-dot--orange { background: #fc832c; }
 }

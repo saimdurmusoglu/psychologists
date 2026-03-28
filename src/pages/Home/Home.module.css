@@ -1,50 +1,60 @@
+/* ============================================================
+   BASE — 320px
+   Tek sütun: resim üstte, text altta, küçük fontlar
+   ============================================================ */
+
 .hero {
   background: var(--color-bg-hero);
-  height: calc(100vh - var(--header-h));
-  display: flex;
-  align-items: flex-start;
+  padding: 24px 0;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
+/* Dekoratif daire mobilde gizli */
 .hero::after {
   content: "";
   position: absolute;
-  left: 1009px;
-  top: 468px;
-  width: 489px;
-  height: 489px;
-  border-radius: 50%;
-  background: var(--color-primary);
-  opacity: 0.15;
-  filter: blur(1000px);
-  pointer-events: none;
-  z-index: 0;
+  display: none;
 }
 
 .hero__inner {
   display: flex;
-  align-items: flex-start;
-  gap: 40px;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
   width: 100%;
-  height: 100%;
-  padding: 0 128px;
+  height: auto;
+  padding: 0 16px;
 }
 
+/* Resim üstte */
+.hero__visual-side {
+  order: 1;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 0;
+  height: auto;
+  min-width: 0;
+}
+
+/* Text altta */
 .hero__content {
-  flex: 0 0 595px;
-  max-width: 595px;
-  padding-top: var(--hero-content-top);
+  order: 2;
+  width: 100%;
+  padding-top: 0;
+  text-align: center;
 }
 
 .hero__title {
   font-family: "Inter", sans-serif;
-  font-size: 80px;
+  font-size: 26px;
   font-weight: 600;
-  line-height: 82px;
-  letter-spacing: -1.6px;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
   color: var(--color-text);
-  margin-bottom: 24px;
+  margin-bottom: 14px;
   width: 100%;
 }
 .hero__title em {
@@ -55,42 +65,31 @@
 
 .hero__sub {
   font-family: "Inter", sans-serif;
-  font-size: 18px;
+  font-size: 13px;
   font-weight: 500;
-  line-height: 24px;
-  letter-spacing: -0.36px;
+  line-height: 1.6;
   color: var(--color-text);
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   width: 100%;
-  max-width: 510px;
 }
 
 .hero__content a.btn--hero {
-  padding: 14px 36px;
-  font-size: 16px;
+  padding: 10px 24px;
+  font-size: 14px;
   line-height: 20px;
-}
-
-.hero__visual-side {
-  flex: 1;
-  min-width: 0;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-end;
-  padding-top: var(--hero-gap);
-  height: 100%;
 }
 
 .hero__img-wrap {
   position: relative;
   width: 100%;
-  max-width: 464px;
+  max-width: 260px;
   flex-shrink: 0;
+  overflow: visible;
 }
 
 .hero__photo {
   width: 100%;
-  height: 526px;
+  height: 220px;
   object-fit: cover;
   object-position: top center;
   border-radius: 10px;
@@ -100,21 +99,21 @@
 .hero__badge--question {
   position: absolute;
   z-index: 2;
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
   background: var(--color-badge-purple);
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
   transform: rotate(-15deg);
-  left: -35px;
-  top: calc(263px - var(--hero-gap));
+  left: -12px;
+  top: 30%;
 }
 .hero__badge--question svg {
-  width: 10px;
-  height: 17px;
+  width: 7px;
+  height: 12px;
   color: white;
   transform: rotate(15deg);
 }
@@ -122,393 +121,607 @@
 .hero__badge--hash {
   position: absolute;
   z-index: 2;
-  width: 48px;
-  height: 48px;
-  border-radius: 10px;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
   background: var(--color-badge-yellow);
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
   transform: rotate(15deg);
-  right: -40px;
-  top: calc(116px - var(--hero-gap));
+  right: -12px;
+  top: 5%;
 }
 .hero__badge--hash svg {
-  width: 25px;
-  height: 25px;
+  width: 16px;
+  height: 16px;
   color: white;
   transform: rotate(-15deg);
 }
 
 .hero__stat {
   position: absolute;
-  top: 332px;
-  left: -101px;
+  bottom: 12px;
+  left: -8px;
+  top: auto;
   background: var(--color-primary);
-  border-radius: 16px;
-  padding: 32px;
+  border-radius: 10px;
+  padding: 8px 10px;
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 6px;
   color: var(--color-bg);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-  width: 311px;
-  height: 118px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  width: auto;
+  height: auto;
   z-index: 2;
   white-space: nowrap;
 }
 
 .hero__stat-check {
-  width: 54px;
-  height: 54px;
-  min-width: 54px;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
   background: var(--color-bg);
-  border-radius: 13px;
+  border-radius: 7px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
 }
 .hero__stat-check svg {
-  width: 30px;
-  height: 30px;
+  width: 15px;
+  height: 15px;
   color: var(--color-primary);
 }
 .hero__stat-label {
   font-family: "Inter", sans-serif;
-  font-size: 16px;
+  font-size: 9px;
   font-weight: 400;
   color: rgba(251, 251, 251, 0.5);
-  margin-bottom: 2px;
+  margin-bottom: 1px;
 }
 .hero__stat-num {
   font-family: "Inter", sans-serif;
-  font-size: 24px;
+  font-size: 12px;
   font-weight: 700;
   color: var(--color-bg);
 }
 
-/* ===== RESPONSIVE ===== */
 
-@media (max-width: 1399px) {
-  .hero__inner {
-    padding: 0 80px;
-    gap: 16px;
-  }
-  .hero__content {
-    flex: 0 0 50%;
-    max-width: 50%;
-    padding-top: 100px;
-  }
-  .hero__visual-side {
-    flex: 0 0 47%;
-    max-width: 47%;
-    padding-top: 60px;
-  }
-  .hero__title {
-    font-size: 80px;
-    line-height: 84px;
-  }
-  .hero__photo {
-    height: 560px;
-  }
-  .hero__stat {
-    width: 340px;
-    height: 130px;
-    padding: 34px;
-  }
-  .hero__stat-check {
-    width: 58px;
-    height: 58px;
-    min-width: 58px;
-  }
-  .hero__stat-label {
-    font-size: 18px;
-  }
-  .hero__stat-num {
-    font-size: 28px;
-  }
-  .hero__badge--question {
-    width: 46px;
-    height: 46px;
-  }
-  .hero__badge--hash {
-    width: 54px;
-    height: 54px;
-    right: -28px;
-    top: calc(116px - 60px);
-  }
-}
+/* ============================================================
+   576px — büyük telefon, tek sütun, biraz büyür
+   ============================================================ */
 
-@media (max-width: 1279px) {
+@media (min-width: 576px) {
+  .hero {
+    padding: 32px 0;
+  }
   .hero__inner {
-    padding: 0 150px 0 150px;
+    padding: 0 20px;
     gap: 24px;
   }
-  .hero__content {
-    flex: 0 0 60%;
-    max-width: 60%;
-    padding-top: 50px;
-  }
-  .hero__visual-side {
-    flex: 0 0 35%;
-    max-width: 35%;
-    padding-top: 30px;
-  }
-  .hero__title {
-    font-size: 65px;
-    line-height: 65px;
-    width: 90%;
-  }
-  .hero__sub {
-    font-size: 16px;
-    line-height: 1.6;
-    max-width: 400px;
+  .hero__img-wrap {
+    max-width: 300px;
   }
   .hero__photo {
-    width: 100%;
-    height: 430px;
+    height: 260px;
   }
-  .hero__img-wrap {
-    width: 100%;
-    max-width: 100%;
+  .hero__title {
+    font-size: 30px;
+  }
+  .hero__sub {
+    font-size: 14px;
+  }
+  .hero__content a.btn--hero {
+    padding: 12px 28px;
+    font-size: 15px;
+  }
+  .hero__badge--question {
+    width: 30px;
+    height: 30px;
+    left: -14px;
   }
   .hero__badge--hash {
-    right: -18px;
-    top: 30px;
-    width: 36px;
-    height: 36px;
-  }
-  .hero__badge--question {
-    left: -18px;
-    top: 160px;
-    width: 32px;
-    height: 32px;
-  }
-  .hero__stat {
-    top: 280px;
-    left: -50px;
-    width: 220px;
-    height: auto;
-    padding: 14px 16px;
-    gap: 8px;
-    white-space: nowrap;
-  }
-  .hero__stat-check {
-    width: 36px;
-    height: 36px;
-    min-width: 36px;
-  }
-  .hero__stat-label {
-    font-size: 11px;
-  }
-  .hero__stat-num {
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 1200px) {
-  .hero__inner {
-    padding: 0 120px 0 80px;
-  }
-  .hero__content {
-    flex: 0 0 63%;
-    max-width: 63%;
-  }
-  .hero__visual-side {
-    flex: 0 0 38%;
-    max-width: 38%;
-  }
-}
-
-@media (max-width: 991px) {
-  .hero {
-    height: auto;
-    min-height: unset;
-    padding: 30px 0;
-    overflow: visible;
-  }
-  .hero__inner {
-    padding: 0 40px;
-    gap: 16px;
-    height: auto;
-  }
-  .hero__content {
-    flex: 0 0 55%;
-    max-width: 55%;
-    padding-top: 40px;
-  }
-  .hero__visual-side {
-    flex: 0 0 42%;
-    max-width: 42%;
-    padding-top: 20px;
-    height: auto;
-  }
-  .hero__title {
-    font-size: 44px;
-    line-height: 1.1;
-  }
-  .hero__sub {
-    font-size: 15px;
-    line-height: 1.6;
-    max-width: 100%;
-  }
-  .hero__img-wrap {
-    max-width: 100%;
-    width: 100%;
-  }
-  .hero__photo {
-    width: 100%;
-    height: 320px;
-    border-radius: 12px;
-  }
-  .hero__badge--question {
-    left: -15px;
-    top: 30%;
     width: 34px;
     height: 34px;
-  }
-  .hero__badge--hash {
-    right: -15px;
-    top: 5%;
-    width: 38px;
-    height: 38px;
+    right: -14px;
   }
   .hero__stat {
-    left: -15px;
-    top: auto;
-    bottom: 20px;
-    width: auto;
-    height: auto;
-    padding: 10px 12px;
+    padding: 9px 12px;
     gap: 8px;
-    white-space: normal;
   }
   .hero__stat-check {
-    width: 36px;
-    height: 36px;
-    min-width: 36px;
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
   }
   .hero__stat-label {
-    font-size: 11px;
+    font-size: 10px;
   }
   .hero__stat-num {
     font-size: 14px;
   }
 }
 
-@media (max-width: 767px) {
+
+/* ============================================================
+   768px — tablet, tek sütun, daha büyük
+   ============================================================ */
+
+@media (min-width: 768px) {
   .hero {
-    padding: 32px 0;
+    padding: 40px 0;
   }
   .hero__inner {
-    flex-direction: column;
-    padding: 0 20px;
-    gap: 24px;
-    text-align: center;
-    align-items: center;
+    padding: 0 32px;
+    gap: 32px;
   }
-  .hero__content {
-    flex: none !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    padding-top: 0;
-    text-align: center;
-    margin: 0 auto;
-    order: 2;
+  .hero__img-wrap {
+    max-width: 380px;
   }
-  .hero__visual-side {
-    flex: none !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    justify-content: center;
-    padding-top: 0;
-    height: auto;
-    order: 1;
+  .hero__photo {
+    height: 320px;
+    border-radius: 12px;
   }
   .hero__title {
-    font-size: clamp(32px, 7vw, 44px);
-    max-width: 360px;
-    margin: 0 auto 24px;
+    font-size: 38px;
+    line-height: 1.1;
+    margin-bottom: 16px;
   }
   .hero__sub {
     font-size: 15px;
-    line-height: 1.6;
+    margin-bottom: 24px;
     max-width: 480px;
-    margin: 0 auto 32px;
+    margin-left: auto;
+    margin-right: auto;
   }
-  .hero__img-wrap {
-    max-width: 240px;
-    margin: 0 auto;
-    width: 100%;
-    overflow: visible;
-  }
-  .hero__photo {
-    width: 100%;
-    height: 280px;
-    border-radius: 12px;
+  .hero__content a.btn--hero {
+    padding: 13px 32px;
+    font-size: 15px;
   }
   .hero__badge--question {
-    left: -20px;
-    top: 30%;
     width: 34px;
     height: 34px;
+    left: -16px;
+    top: 28%;
   }
   .hero__badge--hash {
-    right: -20px;
-    top: 5%;
     width: 38px;
     height: 38px;
+    right: -16px;
+    top: 6%;
   }
   .hero__stat {
-    left: -20px;
-    top: auto;
-    bottom: 30px;
-    width: auto;
-    height: auto;
-    padding: 12px 16px;
-    gap: 8px;
-    white-space: normal;
+    padding: 12px 14px;
+    gap: 10px;
+    border-radius: 12px;
+    bottom: 16px;
+    left: -12px;
   }
   .hero__stat-check {
-    width: 38px;
-    height: 38px;
-    min-width: 38px;
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    border-radius: 9px;
+  }
+  .hero__stat-check svg {
+    width: 18px;
+    height: 18px;
   }
   .hero__stat-label {
-    font-size: 12px;
+    font-size: 11px;
   }
   .hero__stat-num {
     font-size: 16px;
   }
 }
 
-@media (max-width: 575px) {
+
+/* ============================================================
+   992px — küçük masaüstü, hâlâ tek sütun, tablet boyutu
+   ============================================================ */
+
+@media (min-width: 992px) {
   .hero {
-    padding: 24px 0;
+    padding: 48px 0;
   }
-  .hero__title {
-    font-size: 28px;
-    line-height: 1.15;
+  .hero__inner {
+    padding: 0 40px;
+    gap: 40px;
+  }
+  .hero__img-wrap {
+    max-width: 460px;
   }
   .hero__photo {
-    height: 240px;
+    height: 380px;
   }
-  .hero__stat {
-    padding: 10px 12px;
+  .hero__title {
+    font-size: 48px;
+    line-height: 1.05;
+    margin-bottom: 18px;
   }
-  .hero__stat-check {
+  .hero__sub {
+    font-size: 16px;
+    margin-bottom: 28px;
+    max-width: 520px;
+  }
+  .hero__content a.btn--hero {
+    padding: 14px 36px;
+    font-size: 16px;
+  }
+  .hero__badge--question {
     width: 36px;
     height: 36px;
-    min-width: 36px;
+    left: -18px;
+    top: 30%;
   }
-  .hero__badge--question svg {
-    width: 8px;
-    height: 14px;
+  .hero__badge--hash {
+    width: 40px;
+    height: 40px;
+    right: -18px;
+    top: 7%;
   }
-  .hero__badge--hash svg {
+  .hero__stat {
+    padding: 14px 18px;
+    gap: 12px;
+    left: -16px;
+    bottom: 20px;
+  }
+  .hero__stat-check {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+  }
+  .hero__stat-check svg {
     width: 20px;
     height: 20px;
+  }
+  .hero__stat-label {
+    font-size: 12px;
+  }
+  .hero__stat-num {
+    font-size: 18px;
+  }
+}
+
+
+/* ============================================================
+   1280px — orta masaüstü, İKİ SÜTUN başlar
+   içerik solda, resim sağda, küçültülmüş 1440px hali
+   ============================================================ */
+
+@media (min-width: 1280px) {
+  .hero {
+    height: calc(100vh - 88px);
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .hero::after {
+    display: block;
+    left: 800px;
+    top: 400px;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    opacity: 0.15;
+    filter: blur(800px);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .hero__inner {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 32px;
+    height: 100%;
+    padding: 0 80px;
+  }
+
+  /* Content solda */
+  .hero__content {
+    order: 1;
+    flex: 0 0 58%;
+    max-width: 58%;
+    padding-top: 80px;
+    text-align: left;
+    width: auto;
+  }
+
+  /* Resim sağda */
+  .hero__visual-side {
+    order: 2;
+    flex: 0 0 38%;
+    max-width: 38%;
+    justify-content: flex-end;
+    padding-top: 48px;
+    height: 100%;
+    width: auto;
+  }
+
+  .hero__title {
+    font-size: 62px;
+    line-height: 64px;
+    letter-spacing: -1.2px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .hero__sub {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 36px;
+    max-width: 420px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .hero__img-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    overflow: visible;
+  }
+
+  .hero__photo {
+    width: 100%;
+    height: 460px;
+    border-radius: 10px;
+  }
+
+  .hero__badge--question {
+    left: -20px;
+    top: 38%;
+    width: 36px;
+    height: 36px;
+  }
+  .hero__badge--question svg {
+    width: 9px;
+    height: 15px;
+  }
+
+  .hero__badge--hash {
+    right: -24px;
+    top: 10%;
+    width: 42px;
+    height: 42px;
+  }
+  .hero__badge--hash svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .hero__stat {
+    position: absolute;
+    top: 290px;
+    left: -60px;
+    bottom: auto;
+    width: 210px;
+    height: auto;
+    padding: 14px 16px;
+    gap: 10px;
+    border-radius: 14px;
+    white-space: nowrap;
+  }
+
+  .hero__stat-check {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    border-radius: 10px;
+  }
+  .hero__stat-check svg {
+    width: 22px;
+    height: 22px;
+  }
+  .hero__stat-label {
+    font-size: 12px;
+  }
+  .hero__stat-num {
+    font-size: 18px;
+  }
+}
+
+
+/* ============================================================
+   1440px — tam masaüstü (mevcut stiller, dokunulmadı)
+   ============================================================ */
+
+@media (min-width: 1440px) {
+  .hero {
+    background: var(--color-bg-hero);
+    height: calc(100vh - var(--header-h));
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::after {
+    content: "";
+    position: absolute;
+    left: 1009px;
+    top: 468px;
+    width: 489px;
+    height: 489px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    opacity: 0.15;
+    filter: blur(1000px);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .hero__inner {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    width: 100%;
+    height: 100%;
+    padding: 0 128px;
+  }
+
+  .hero__content {
+    flex: 0 0 595px;
+    max-width: 595px;
+    padding-top: var(--hero-content-top);
+  }
+
+  .hero__title {
+    font-family: "Inter", sans-serif;
+    font-size: 80px;
+    font-weight: 600;
+    line-height: 82px;
+    letter-spacing: -1.6px;
+    color: var(--color-text);
+    margin-bottom: 24px;
+    width: 100%;
+  }
+  .hero__title em {
+    font-style: italic;
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+
+  .hero__sub {
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: -0.36px;
+    color: var(--color-text);
+    margin-bottom: 40px;
+    width: 100%;
+    max-width: 510px;
+  }
+
+  .hero__content a.btn--hero {
+    padding: 14px 36px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .hero__visual-side {
+    flex: 0 0 549px;
+    max-width: 549px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding-top: var(--hero-gap);
+    height: 100%;
+  }
+
+  .hero__img-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 464px;
+    flex-shrink: 0;
+  }
+
+  .hero__photo {
+    width: 100%;
+    height: 526px;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 10px;
+    display: block;
+  }
+
+  .hero__badge--question {
+    position: absolute;
+    z-index: 2;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: var(--color-badge-purple);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    transform: rotate(-15deg);
+    left: -35px;
+    top: calc(263px - var(--hero-gap));
+  }
+  .hero__badge--question svg {
+    width: 10px;
+    height: 17px;
+    color: white;
+    transform: rotate(15deg);
+  }
+
+  .hero__badge--hash {
+    position: absolute;
+    z-index: 2;
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    background: var(--color-badge-yellow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    transform: rotate(15deg);
+    right: -40px;
+    top: calc(116px - var(--hero-gap));
+  }
+  .hero__badge--hash svg {
+    width: 25px;
+    height: 25px;
+    color: white;
+    transform: rotate(-15deg);
+  }
+
+  .hero__stat {
+    position: absolute;
+    top: 332px;
+    left: -101px;
+    background: var(--color-primary);
+    border-radius: 16px;
+    padding: 32px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: var(--color-bg);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    width: 311px;
+    height: 118px;
+    z-index: 2;
+    white-space: nowrap;
+  }
+
+  .hero__stat-check {
+    width: 54px;
+    height: 54px;
+    min-width: 54px;
+    background: var(--color-bg);
+    border-radius: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .hero__stat-check svg {
+    width: 30px;
+    height: 30px;
+    color: var(--color-primary);
+  }
+  .hero__stat-label {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(251, 251, 251, 0.5);
+    margin-bottom: 2px;
+  }
+  .hero__stat-num {
+    font-family: "Inter", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--color-bg);
   }
 }
