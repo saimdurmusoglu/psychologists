@@ -14,7 +14,7 @@ import './styles/global.css'
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <BrowserRouter
-      basename="/psychologists"
+      basename={import.meta.env.BASE_URL}
       future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
     >
       <ThemeProvider>
