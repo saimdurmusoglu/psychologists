@@ -1,0 +1,244 @@
+{
+  "psychologists": {
+    "0": {
+      "name": "Dr. Sarah Davis",
+      "avatar_url": "/images/image1.png",
+      "experience": "12 years",
+      "license": "Licensed Psychologist (License #67890)",
+      "specialization": "Depression and Mood Disorders",
+      "initial_consultation": "Free 45-minute initial consultation",
+      "rating": 4.75,
+      "price_per_hour": 120,
+      "about": "Dr. Sarah Davis is a highly experienced and licensed psychologist specializing in Depression and Mood Disorders. With 12 years of practice, she has helped numerous individuals overcome their depression and regain control of their lives. Dr. Davis is known for her empathetic and understanding approach to therapy, making her clients feel comfortable and supported throughout their journey to better mental health.",
+      "reviews": [
+        { "reviewer": "Michael Brown", "rating": 4.5, "comment": "Dr. Davis has been a great help in managing my depression. Her insights have been valuable." },
+        { "reviewer": "Linda Johnson", "rating": 5.0, "comment": "I'm very satisfied with Dr. Davis's therapy. She's understanding and empathetic." }
+      ]
+    },
+    "1": {
+      "name": "Dr. Mark Thompson",
+      "avatar_url": "/images/image2.png",
+      "experience": "20 years",
+      "license": "Licensed Psychologist (License #54321)",
+      "specialization": "Relationship Counseling",
+      "initial_consultation": "Free 60-minute initial consultation",
+      "rating": 4.7,
+      "price_per_hour": 180,
+      "about": "Dr. Mark Thompson is a highly experienced and licensed psychologist specializing in Relationship Counseling. With 20 years of practice, he has helped individuals navigate and improve their relationships, leading to better well-being and personal growth.",
+      "reviews": [
+        { "reviewer": "Susan Roberts", "rating": 4.8, "comment": "I've had an excellent experience with Dr. Thompson. His expertise has been invaluable." },
+        { "reviewer": "David Lee", "rating": 4.6, "comment": "Dr. Thompson's guidance has helped me improve my relationships and well-being." }
+      ]
+    },
+    "2": {
+      "name": "Dr. Lisa Anderson",
+      "avatar_url": "/images/image3.png",
+      "experience": "18 years",
+      "license": "Licensed Psychologist (License #98765)",
+      "specialization": "Trauma and PTSD",
+      "initial_consultation": "Free 30-minute initial consultation",
+      "rating": 4.8,
+      "price_per_hour": 160,
+      "about": "Dr. Lisa Anderson is a highly experienced and licensed psychologist specializing in Trauma and PTSD. With 18 years of practice, she has been a beacon of support for individuals who have experienced trauma and its aftermath.",
+      "reviews": [
+        { "reviewer": "Emily White", "rating": 4.9, "comment": "Dr. Anderson is an exceptional psychologist. Her insights have been life-changing for me." },
+        { "reviewer": "James Taylor", "rating": 4.7, "comment": "I highly recommend Dr. Anderson. She's helped me overcome my personal challenges." }
+      ]
+    },
+    "3": {
+      "name": "Dr. Michael Carter",
+      "avatar_url": "/images/image4.png",
+      "experience": "22 years",
+      "license": "Licensed Psychologist (License #78901)",
+      "specialization": "Anger Management",
+      "initial_consultation": "Free 45-minute initial consultation",
+      "rating": 4.55,
+      "price_per_hour": 200,
+      "about": "Dr. Michael Carter is a highly experienced and licensed psychologist specializing in Anger Management. With 22 years of practice, he has helped numerous individuals effectively manage their anger and develop healthier emotional responses.",
+      "reviews": [
+        { "reviewer": "Laura Adams", "rating": 4.6, "comment": "Dr. Carter has been instrumental in helping me navigate life's challenges." },
+        { "reviewer": "Robert Wilson", "rating": 4.5, "comment": "I've seen significant improvements in my mental health with Dr. Carter's guidance." }
+      ]
+    },
+    "4": {
+      "name": "Dr. Maria Rodriguez",
+      "avatar_url": "/images/image5.png",
+      "experience": "16 years",
+      "license": "Licensed Psychologist (License #34567)",
+      "specialization": "Grief and Bereavement Counseling",
+      "initial_consultation": "Free 30-minute initial consultation",
+      "rating": 4.75,
+      "price_per_hour": 170,
+      "about": "Dr. Maria Rodriguez is a highly experienced and licensed psychologist specializing in Grief and Bereavement Counseling. With 16 years of practice, she has provided compassionate support to individuals coping with loss and helping them find a path forward.",
+      "reviews": [
+        { "reviewer": "Daniel Clark", "rating": 4.8, "comment": "Dr. Rodriguez is a compassionate and insightful psychologist." },
+        { "reviewer": "Sarah Turner", "rating": 4.7, "comment": "I'm thankful for Dr. Rodriguez's support during a challenging period in my life." }
+      ]
+    },
+    "5": {
+      "name": "Dr. Jonathan Miller",
+      "avatar_url": "/images/image6.png",
+      "experience": "19 years",
+      "license": "Licensed Psychologist (License #54321)",
+      "specialization": "Couples Counseling",
+      "initial_consultation": "Free 60-minute initial consultation",
+      "rating": 4.85,
+      "price_per_hour": 180,
+      "about": "Dr. Jonathan Miller is a highly experienced and licensed psychologist specializing in Couples Counseling. With 19 years of practice, he has been instrumental in facilitating personal growth and strengthening relationships between partners.",
+      "reviews": [
+        { "reviewer": "Amy Lewis", "rating": 4.9, "comment": "Dr. Miller is an exceptional psychologist. His guidance has been instrumental in my personal growth." },
+        { "reviewer": "Paul Harris", "rating": 4.8, "comment": "I've gained valuable insights from Dr. Miller's therapy." }
+      ]
+    },
+    "6": {
+      "name": "Dr. Kate Adams",
+      "avatar_url": "/images/image7.png",
+      "experience": "17 years",
+      "license": "Licensed Psychologist (License #54321)",
+      "specialization": "Anxiety and Stress Management",
+      "initial_consultation": "Free 30-minute initial consultation",
+      "rating": 4.65,
+      "price_per_hour": 170,
+      "about": "Dr. Kate Adams is a highly experienced and licensed psychologist specializing in Anxiety and Stress Management. With 17 years of practice, she has been instrumental in helping individuals cope with anxiety and stress effectively.",
+      "reviews": [
+        { "reviewer": "James Turner", "rating": 4.6, "comment": "Dr. Adams has been instrumental in helping me cope with anxiety." },
+        { "reviewer": "Laura Parker", "rating": 4.7, "comment": "I'm grateful for Dr. Adams's support during a challenging time in my life." }
+      ]
+    },
+    "7": {
+      "name": "Dr. Rachel Turner",
+      "avatar_url": "/images/image8.png",
+      "experience": "14 years",
+      "license": "Licensed Psychologist (License #12345)",
+      "specialization": "Stress Management",
+      "initial_consultation": "Free 30-minute initial consultation",
+      "rating": 4.65,
+      "price_per_hour": 160,
+      "about": "Dr. Rachel Turner is a highly experienced and licensed psychologist specializing in Stress Management. With 14 years of practice, she has been a reliable source of support for individuals seeking to manage stress and achieve better work-life balance.",
+      "reviews": [
+        { "reviewer": "Michael Johnson", "rating": 4.7, "comment": "Dr. Turner has been a great support in my journey towards better mental health." },
+        { "reviewer": "Sarah Adams", "rating": 4.6, "comment": "I've found Dr. Turner's therapy sessions to be highly beneficial." }
+      ]
+    },
+    "8": {
+      "name": "Dr. John Smith",
+      "avatar_url": "/images/image9.png",
+      "experience": "21 years",
+      "license": "Licensed Psychologist (License #67890)",
+      "specialization": "Child and Adolescent Counseling",
+      "initial_consultation": "Free 45-minute initial consultation",
+      "rating": 4.8,
+      "price_per_hour": 190,
+      "about": "Dr. John Smith is a highly experienced and licensed psychologist specializing in Child and Adolescent Counseling. With 21 years of practice, he has been instrumental in supporting the emotional well-being of children and adolescents.",
+      "reviews": [
+        { "reviewer": "Jessica Wilson", "rating": 4.9, "comment": "Dr. Smith is an outstanding psychologist. His insights have had a profound impact on my life." },
+        { "reviewer": "David Lee", "rating": 4.7, "comment": "I've experienced significant improvements in my mental health with Dr. Smith's guidance." }
+      ]
+    },
+    "9": {
+      "name": "Dr. Christopher Johnson",
+      "avatar_url": "/images/image10.png",
+      "experience": "20 years",
+      "license": "Licensed Psychologist (License #98765)",
+      "specialization": "Trauma and PTSD",
+      "initial_consultation": "Free 45-minute initial consultation",
+      "rating": 4.75,
+      "price_per_hour": 180,
+      "about": "Dr. Christopher Johnson is a highly experienced and licensed psychologist specializing in Trauma and PTSD. With 20 years of practice, he has been a tremendous source of support for individuals coping with trauma and its lasting effects.",
+      "reviews": [
+        { "reviewer": "Mary Davis", "rating": 4.8, "comment": "Dr. Johnson has been a tremendous help in improving my mental well-being." },
+        { "reviewer": "Robert Clark", "rating": 4.7, "comment": "I've gained valuable insights from Dr. Johnson's therapy." }
+      ]
+    },
+    "10": {
+      "name": "Dr. Michelle Carter",
+      "avatar_url": "/images/image11.png",
+      "experience": "18 years",
+      "license": "Licensed Psychologist (License #12345)",
+      "specialization": "Stress Management",
+      "initial_consultation": "Free 30-minute initial consultation",
+      "rating": 4.8,
+      "price_per_hour": 160,
+      "about": "Dr. Michelle Carter is a highly experienced and licensed psychologist specializing in Stress Management. With 18 years of practice, she has been a guiding light for individuals seeking to manage stress and find inner peace.",
+      "reviews": [
+        { "reviewer": "Emily Turner", "rating": 4.9, "comment": "Dr. Carter is an empathetic and insightful psychologist. Her guidance has been life-changing for me." },
+        { "reviewer": "David Adams", "rating": 4.7, "comment": "I highly recommend Dr. Carter. She's helped me overcome personal challenges." }
+      ]
+    },
+    "11": {
+      "name": "Dr. Robert Davis",
+      "avatar_url": "/images/image12.png",
+      "experience": "21 years",
+      "license": "Licensed Psychologist (License #67890)",
+      "specialization": "Couples Counseling",
+      "initial_consultation": "Free 45-minute initial consultation",
+      "rating": 4.8,
+      "price_per_hour": 190,
+      "about": "Dr. Robert Davis is a highly experienced and licensed psychologist specializing in Couples Counseling. With 21 years of practice, he has been an outstanding source of guidance for couples seeking to improve their relationships.",
+      "reviews": [
+        { "reviewer": "Sarah White", "rating": 4.9, "comment": "Dr. Davis is an outstanding psychologist. His guidance has had a profound impact on my life." },
+        { "reviewer": "Michael Johnson", "rating": 4.7, "comment": "I've experienced significant improvements in my mental health with Dr. Davis's support." }
+      ]
+    },
+    "12": {
+      "name": "Dr. Andrew Wilson",
+      "avatar_url": "/images/image13.png",
+      "experience": "16 years",
+      "license": "Licensed Psychologist (License #78901)",
+      "specialization": "Depression and Mood Disorders",
+      "initial_consultation": "Free 45-minute initial consultation",
+      "rating": 4.85,
+      "price_per_hour": 170,
+      "about": "Dr. Andrew Wilson is a highly experienced and licensed psychologist specializing in Depression and Mood Disorders. With 16 years of practice, he has been a transformative force in the lives of individuals seeking to overcome depression.",
+      "reviews": [
+        { "reviewer": "Laura Adams", "rating": 4.9, "comment": "Dr. Wilson is an excellent psychologist. His therapy has been transformative for me." },
+        { "reviewer": "David Clark", "rating": 4.8, "comment": "I highly recommend Dr. Wilson. He's a compassionate and skilled therapist." }
+      ]
+    },
+    "13": {
+      "name": "Dr. Benjamin Smith",
+      "avatar_url": "/images/image14.png",
+      "experience": "20 years",
+      "license": "Licensed Psychologist (License #67890)",
+      "specialization": "Couples Counseling",
+      "initial_consultation": "Free 45-minute initial consultation",
+      "rating": 4.8,
+      "price_per_hour": 190,
+      "about": "Dr. Benjamin Smith is a highly experienced and licensed psychologist specializing in Couples Counseling. With 20 years of practice, he has been an exceptional source of guidance for couples seeking to strengthen their relationships.",
+      "reviews": [
+        { "reviewer": "Emily Turner", "rating": 4.9, "comment": "Dr. Smith is an exceptional psychologist. His guidance has been life-changing for me." },
+        { "reviewer": "David Adams", "rating": 4.7, "comment": "I highly recommend Dr. Smith. He's helped me overcome personal challenges." }
+      ]
+    },
+    "14": {
+      "name": "Dr. Daniel Clark",
+      "avatar_url": "/images/image15.png",
+      "experience": "19 years",
+      "license": "Licensed Psychologist (License #67890)",
+      "specialization": "Couples Counseling",
+      "initial_consultation": "Free 45-minute initial consultation",
+      "rating": 4.8,
+      "price_per_hour": 180,
+      "about": "Dr. Daniel Clark is a highly experienced and licensed psychologist specializing in Couples Counseling. With 19 years of practice, he has been an exceptional source of guidance for couples seeking to improve their relationships.",
+      "reviews": [
+        { "reviewer": "Jessica Wilson", "rating": 4.9, "comment": "Dr. Clark is an exceptional psychologist. His insights have had a profound impact on my life." },
+        { "reviewer": "David Lee", "rating": 4.7, "comment": "I've experienced significant improvements in my mental health with Dr. Clark's support." }
+      ]
+    },
+    "15": {
+      "name": "Dr. William Turner",
+      "avatar_url": "/images/image16.png",
+      "experience": "22 years",
+      "license": "Licensed Psychologist (License #67890)",
+      "specialization": "Couples Counseling",
+      "initial_consultation": "Free 45-minute initial consultation",
+      "rating": 4.8,
+      "price_per_hour": 190,
+      "about": "Dr. William Turner is a highly experienced and licensed psychologist specializing in Couples Counseling. With 22 years of practice, he has been a trusted source of support for couples seeking to strengthen their relationships.",
+      "reviews": [
+        { "reviewer": "Jessica Wilson", "rating": 4.9, "comment": "Dr. Turner is an outstanding psychologist. His insights have had a profound impact on my life." },
+        { "reviewer": "David Lee", "rating": 4.7, "comment": "I've experienced significant improvements in my mental health with Dr. Turner's support." }
+      ]
+    }
+  }
+}
