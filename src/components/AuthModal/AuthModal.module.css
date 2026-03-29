@@ -298,34 +298,14 @@
 
 @media (min-width: 1440px) {
   .modal-backdrop {
-    position: fixed;
-    inset: 0;
-    background: rgba(25, 26, 21, 0.6);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
     padding: 20px;
-    animation: backdrop-in 0.2s ease;
-  }
-
-  @keyframes backdrop-in {
-    from { opacity: 0; }
-    to   { opacity: 1; }
   }
 
   .modal {
-    background: var(--color-bg);
     border-radius: 30px;
     padding: 64px;
-    width: 100%;
     max-width: 566px;
-    position: relative;
-    animation: modal-in 0.25s ease;
-    display: flex;
-    flex-direction: column;
     gap: 40px;
-    box-sizing: border-box;
     max-height: none;
     overflow-y: visible;
   }
@@ -337,127 +317,46 @@
     height: 600px;
   }
 
-  @keyframes modal-in {
-    from { opacity: 0; transform: translateY(20px) scale(0.97); }
-    to   { opacity: 1; transform: translateY(0) scale(1);       }
-  }
-
   .modal__close {
-    position: absolute;
     top: 20px;
     right: 20px;
     width: 32px;
     height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-text);
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    transition: opacity 0.15s;
-  }
-  .modal__close:hover {
-    opacity: 0.6;
   }
 
   .modal__header {
-    display: flex;
-    flex-direction: column;
     gap: 20px;
   }
 
   .modal__title {
     font-size: 40px;
-    font-weight: 500;
     line-height: 48px;
     letter-spacing: -0.8px;
-    color: var(--color-text);
-    margin: 0;
     padding-right: 40px;
   }
 
   .modal__subtitle {
     font-size: 16px;
-    font-weight: 400;
-    line-height: 20px;
-    letter-spacing: 0;
-    color: rgba(25, 26, 21, 0.5);
-    margin: 0;
   }
 
   .modal__form {
-    display: flex;
-    flex-direction: column;
     gap: 40px;
   }
 
   .modal__fields {
-    display: flex;
-    flex-direction: column;
     gap: 18px;
-  }
-
-  .field {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-
-  .field__row {
-    display: flex;
-    align-items: center;
-    border: 1px solid rgba(25, 26, 21, 0.1);
-    border-radius: 12px;
-    overflow: hidden;
-    background: var(--color-bg);
-    transition: border-color 0.2s;
-  }
-  .field__row:focus-within {
-    border-color: var(--color-primary);
-  }
-  .field__row:has(.field__input--error) {
-    border-color: var(--color-error);
   }
 
   .field__label {
     font-size: 16px;
-    font-weight: 400;
-    line-height: 20px;
-    letter-spacing: 0;
-    color: var(--color-text);
-    white-space: nowrap;
     padding: 16px 0 16px 18px;
     min-width: 90px;
-    flex-shrink: 0;
   }
 
   .field__input {
-    flex: 1;
-    width: 100%;
     height: 52px;
     padding: 16px 18px 16px 12px;
-    border: none;
     font-size: 16px;
-    font-weight: 400;
-    line-height: 20px;
-    letter-spacing: 0;
-    color: var(--color-text);
-    background: transparent;
-    outline: none;
-    appearance: none;
-    box-sizing: border-box;
-  }
-  .field__input--error {
-    border-color: var(--color-error);
-  }
-
-  .field__input-wrap {
-    position: relative;
-    flex: 1;
-    display: flex;
-    align-items: center;
   }
 
   .field__input-wrap .field__input {
@@ -468,62 +367,14 @@
     position: absolute;
     right: 14px;
     top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: var(--color-text-secondary);
-    display: flex;
-    align-items: center;
-    padding: 0;
-  }
-  .field__eye:hover {
-    color: var(--color-text);
-  }
-
-  .field__error {
-    font-size: 12px;
-    color: var(--color-error);
-    padding-left: 4px;
   }
 
   .modal__submit {
-    width: 100%;
     height: 52px;
-    background: var(--color-primary);
-    color: var(--color-bg);
-    border: none;
-    border-radius: 30px;
     font-size: 16px;
-    font-weight: 500;
-    line-height: 20px;
-    letter-spacing: -0.16px;
-    cursor: pointer;
-    transition: background 0.2s;
-  }
-  .modal__submit:hover {
-    background: var(--color-primary-dark);
-  }
-  .modal__submit:disabled {
-    opacity: 0.7;
-    cursor: not-allowed;
   }
 
   .modal__switch {
     font-size: 14px;
-    color: var(--color-text-secondary);
-    text-align: center;
-    margin: 0;
-  }
-
-  .modal__switch-btn {
-    background: none;
-    border: none;
-    color: var(--color-primary);
-    font-size: inherit;
-    font-weight: 600;
-    cursor: pointer;
-    text-decoration: underline;
-    text-underline-offset: 2px;
   }
 }
