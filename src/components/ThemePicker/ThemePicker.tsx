@@ -2,6 +2,8 @@ import {useState, useRef, useEffect} from "react";
 import {useTheme} from "../../context/ThemeContext";
 import styles from "./ThemePicker.module.css";
 
+const base = import.meta.env.BASE_URL
+
 type Theme = "green" | "blue" | "orange";
 
 export default function ThemePicker() {
@@ -27,7 +29,7 @@ export default function ThemePicker() {
         title="Change theme"
       >
         <svg width="40" height="40">
-          <use href="/icons/sprite.svg#icon-palette" />
+          <use href={`${base}icons/sprite.svg#icon-palette`} />
         </svg>
       </button>
 

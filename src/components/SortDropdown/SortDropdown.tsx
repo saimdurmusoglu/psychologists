@@ -1,6 +1,8 @@
 import {useState, useRef, useEffect} from "react";
 import styles from "./SortDropdown.module.css";
 
+const base = import.meta.env.BASE_URL
+
 type SortDir = "asc" | "desc";
 
 interface SortOption {
@@ -72,7 +74,7 @@ export default function SortDropdown({
             className={styles.chevron}
             style={{transform: open ? "rotate(0deg)" : "rotate(180deg)"}}
           >
-            <use href="/icons/sprite.svg#icon-chevron" />
+            <use href={`${base}icons/sprite.svg#icon-chevron`} />
           </svg>
         </button>
 

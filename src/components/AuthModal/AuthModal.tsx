@@ -6,6 +6,8 @@ import {useAuth} from "../../context/AuthContext";
 import toast from "react-hot-toast";
 import styles from "./AuthModal.module.css";
 
+const base = import.meta.env.BASE_URL
+
 type AuthModalMode = "login" | "register";
 
 interface AuthModalProps {
@@ -113,7 +115,7 @@ export default function AuthModal({mode, onClose, onSwitch}: AuthModalProps) {
           aria-label="Close"
         >
           <svg width="32" height="32" style={{color: "var(--color-text)"}}>
-            <use href="/icons/sprite.svg#icon-close" />
+            <use href={`${base}icons/sprite.svg#icon-close`} />
           </svg>
         </button>
 
@@ -199,8 +201,8 @@ export default function AuthModal({mode, onClose, onSwitch}: AuthModalProps) {
                       <use
                         href={
                           showPassword
-                            ? "/icons/sprite.svg#icon-eye-on"
-                            : "/icons/sprite.svg#icon-eye-off"
+                            ? `${base}icons/sprite.svg#icon-eye-on`
+                            : `${base}icons/sprite.svg#icon-eye-off`
                         }
                       />
                     </svg>

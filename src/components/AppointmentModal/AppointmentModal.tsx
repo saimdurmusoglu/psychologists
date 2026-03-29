@@ -6,6 +6,8 @@ import {Psychologist} from "../../hooks/usePsychologists";
 import toast from "react-hot-toast";
 import styles from "./AppointmentModal.module.css";
 
+const base = import.meta.env.BASE_URL
+
 interface AppointmentModalProps {
   psychologist: Psychologist;
   onClose: () => void;
@@ -113,7 +115,7 @@ export default function AppointmentModal({
           aria-label="Close"
         >
           <svg width="32" height="32" style={{color: "var(--color-text)"}}>
-            <use href="/icons/sprite.svg#icon-close" />
+            <use href={`${base}icons/sprite.svg#icon-close`} />
           </svg>
         </button>
 
@@ -129,7 +131,7 @@ export default function AppointmentModal({
 
         <div className={styles["appointment-doctor"]}>
           <img
-            src={psychologist.avatar_url}
+            src={`${import.meta.env.BASE_URL}${psychologist.avatar_url.replace(/^\//, '')}`}
             alt={psychologist.name}
             className={styles["appointment-doctor__img"]}
           />
@@ -207,7 +209,7 @@ export default function AppointmentModal({
                       height="20"
                       style={{color: "var(--color-text-secondary)"}}
                     >
-                      <use href="/icons/sprite.svg#icon-clock" />
+                      <use href={`${base}icons/sprite.svg#icon-clock`} />
                     </svg>
                   </button>
                   {timeOpen && (

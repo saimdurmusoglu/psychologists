@@ -6,6 +6,8 @@ import AuthModal from "../AuthModal/AuthModal";
 import toast from "react-hot-toast";
 import styles from "./Header.module.css";
 
+const base = import.meta.env.BASE_URL
+
 type AuthModalMode = "login" | "register";
 
 export default function Header() {
@@ -84,7 +86,7 @@ export default function Header() {
               <>
                 <div className={styles["user-icon"]}>
                   <svg width="24" height="24">
-                    <use href="/icons/sprite.svg#icon-user" />
+                    <use href={`${base}icons/sprite.svg#icon-user`} />
                   </svg>
                 </div>
                 <span className={styles["header__user"]}>
@@ -142,7 +144,7 @@ export default function Header() {
               aria-label="Close menu"
             >
               <svg width="24" height="24" style={{color: "var(--color-bg)"}}>
-                <use href="/icons/sprite.svg#icon-close" />
+                <use href={`${base}icons/sprite.svg#icon-close`} />
               </svg>
             </button>
             <nav className={styles["mobile-nav"]}>
@@ -174,7 +176,7 @@ export default function Header() {
                   <div className={styles["mobile-user"]}>
                     <div className={styles["user-icon"]}>
                       <svg width="24" height="24">
-                        <use href="/icons/sprite.svg#icon-user" />
+                        <use href={`${base}icons/sprite.svg#icon-user`} />
                       </svg>
                     </div>
                     <span className={styles["header__user"]}>

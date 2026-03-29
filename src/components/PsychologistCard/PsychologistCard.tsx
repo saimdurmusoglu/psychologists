@@ -6,6 +6,8 @@ import AppointmentModal from "../AppointmentModal/AppointmentModal";
 import toast from "react-hot-toast";
 import styles from "./PsychologistCard.module.css";
 
+const base = import.meta.env.BASE_URL
+
 function StarIcon({filled}: {filled: boolean}) {
   return (
     <svg
@@ -13,7 +15,7 @@ function StarIcon({filled}: {filled: boolean}) {
       height="16"
       style={{color: filled ? "#FFC531" : "transparent"}}
     >
-      <use href="/icons/sprite.svg#icon-star" />
+      <use href={`${base}icons/sprite.svg#icon-star`} />
     </svg>
   );
 }
@@ -28,8 +30,8 @@ function HeartIcon({active}: {active: boolean}) {
       <use
         href={
           active
-            ? "/icons/sprite.svg#icon-heart-filled"
-            : "/icons/sprite.svg#icon-heart"
+            ? `${base}icons/sprite.svg#icon-heart-filled`
+            : `${base}icons/sprite.svg#icon-heart`
         }
       />
     </svg>
@@ -90,7 +92,7 @@ export default function PsychologistCard({psychologist}: Props) {
       <div className={styles["psych-card__top-section"]}>
         <div className={styles["psych-card__avatar-wrap"]}>
           <img
-            src={psychologist.avatar_url}
+            src={`${import.meta.env.BASE_URL}${psychologist.avatar_url.replace(/^\//, '')}`}
             alt={psychologist.name}
             className={styles["psych-card__avatar"]}
           />

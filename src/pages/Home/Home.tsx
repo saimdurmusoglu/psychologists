@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
 import styles from './Home.module.css'
 
+const base = import.meta.env.BASE_URL
+
 export default function Home() {
   return (
     <section className={styles.hero}>
@@ -15,7 +17,7 @@ export default function Home() {
           <Link to="/psychologists" className="btn btn--hero">
             Get started
             <svg className={styles["hero__btn-icon"]}>
-              <use href="/icons/sprite.svg#icon-arrow" />
+              <use href={`${base}icons/sprite.svg#icon-arrow`} />
             </svg>
           </Link>
         </div>
@@ -23,25 +25,25 @@ export default function Home() {
         <div className={styles['hero__visual-side']}>
           <div className={styles['hero__img-wrap']}>
             <img
-              src="/images/hero-photo@1x.jpg"
-              srcSet="/images/hero-photo@1x.jpg 1x, /images/hero-photo@2x.jpg 2x"
+              src={`${base}images/hero-photo@1x.jpg`}
+              srcSet={`${base}images/hero-photo@1x.jpg 1x, ${base}images/hero-photo@2x.jpg 2x`}
               alt="Psychologist"
               className={styles['hero__photo']}
             />
             <div className={styles['hero__badge--question']}>
               <svg width="10" height="17">
-                <use href="/icons/sprite.svg#icon-question" />
+                <use href={`${base}icons/sprite.svg#icon-question`} />
               </svg>
             </div>
             <div className={styles['hero__badge--hash']}>
               <svg width="25" height="25">
-                <use href="/icons/sprite.svg#icon-users" />
+                <use href={`${base}icons/sprite.svg#icon-users`} />
               </svg>
             </div>
             <div className={styles['hero__stat']}>
               <div className={styles['hero__stat-check']}>
                 <svg width="30" height="30" style={{ color: 'var(--color-primary)' }}>
-                  <use href="/icons/sprite.svg#icon-check" />
+                  <use href={`${base}icons/sprite.svg#icon-check`} />
                 </svg>
               </div>
               <div>
