@@ -12,11 +12,16 @@
   z-index: 1000;
   padding: 16px;
   animation: backdrop-in 0.2s ease;
+  overflow: hidden;
 }
 
 @keyframes backdrop-in {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .modal {
@@ -27,16 +32,37 @@
   max-width: 100%;
   max-height: 95vh;
   overflow-y: auto;
+  overflow-x: hidden;
   position: relative;
   animation: modal-in 0.25s ease;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(25, 26, 21, 0.2) transparent;
+}
+
+.modal::-webkit-scrollbar {
+  width: 4px;
+}
+.modal::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 0 20px 20px 0;
+}
+.modal::-webkit-scrollbar-thumb {
+  background: rgba(25, 26, 21, 0.2);
+  border-radius: 4px;
 }
 
 @keyframes modal-in {
-  from { opacity: 0; transform: translateY(20px) scale(0.97); }
-  to   { opacity: 1; transform: translateY(0) scale(1);       }
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 .modal__close {
@@ -119,7 +145,6 @@
   gap: 12px;
 }
 
-/* Tek sütun mobilde */
 .form__row {
   display: grid;
   grid-template-columns: 1fr;
@@ -235,7 +260,6 @@
   box-sizing: border-box;
 }
 
-/* Time Picker */
 .time-picker {
   position: relative;
   flex: 1;
@@ -355,9 +379,8 @@
   cursor: not-allowed;
 }
 
-
 /* ============================================================
-   576px — iki sütun geri döner
+   576px
    ============================================================ */
 
 @media (min-width: 576px) {
@@ -365,6 +388,9 @@
     padding: 36px 24px;
     border-radius: 24px;
     max-width: 480px;
+  }
+  .modal::-webkit-scrollbar-track {
+    border-radius: 0 24px 24px 0;
   }
   .modal__title {
     font-size: 28px;
@@ -384,7 +410,6 @@
   }
 }
 
-
 /* ============================================================
    768px
    ============================================================ */
@@ -394,6 +419,9 @@
     padding: 48px 36px;
     border-radius: 28px;
     max-width: 540px;
+  }
+  .modal::-webkit-scrollbar-track {
+    border-radius: 0 28px 28px 0;
   }
   .modal__title {
     font-size: 32px;
@@ -432,9 +460,8 @@
   }
 }
 
-
 /* ============================================================
-   1440px — tam masaüstü (mevcut stiller, dokunulmadı)
+   1440px
    ============================================================ */
 
 @media (min-width: 1440px) {
@@ -447,6 +474,10 @@
     padding: 64px;
     max-width: 600px;
     max-height: 90vh;
+  }
+
+  .modal::-webkit-scrollbar-track {
+    border-radius: 0 30px 30px 0;
   }
 
   .modal__close {
@@ -505,7 +536,6 @@
     font-size: 16px;
   }
 
-  /* Comment field — dikey yapı */
   .field__row--comment {
     height: 116px;
   }
@@ -520,7 +550,6 @@
     font-size: 16px;
   }
 
-  /* Time Picker */
   .time-picker__btn {
     height: 52px;
     padding: 16px 18px 16px 12px;

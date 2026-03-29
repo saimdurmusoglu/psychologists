@@ -63,9 +63,31 @@ export default function PsychologistCard({psychologist}: Props) {
     }
   };
 
+  const tagList = [
+    {label: "Experience", value: psychologist.experience},
+    {label: "License", value: psychologist.license},
+    {label: "Specialization", value: psychologist.specialization},
+    {label: "Initial_consultation", value: psychologist.initial_consultation},
+  ];
+
+  const tagRows: (typeof tagList)[] = [];
+  for (let i = 0; i < tagList.length; i += 2) {
+    tagRows.push(tagList.slice(i, i + 2));
+  }
+
   return (
     <article className={styles["psych-card"]}>
-      <div className={styles["psych-card__header"]}>
+      {/* mobil kalp — absolute sağ üst */}
+      <button
+        className={`${styles["psych-card__fav"]}${fav ? ` ${styles.active}` : ""}`}
+        onClick={handleFavorite}
+        aria-label={fav ? "Remove from favorites" : "Add to favorites"}
+      >
+        <HeartIcon active={fav} />
+      </button>
+
+      {/* mobilde: avatar + label/isim yan yana */}
+      <div className={styles["psych-card__top-section"]}>
         <div className={styles["psych-card__avatar-wrap"]}>
           <img
             src={psychologist.avatar_url}
@@ -74,13 +96,19 @@ export default function PsychologistCard({psychologist}: Props) {
           />
           <span className={styles["psych-card__online"]} aria-label="Online" />
         </div>
+        <div className={styles["psych-card__label-wrap"]}>
+          <span className={styles["psych-card__label"]}>Psychologist</span>
+          <h2 className={styles["psych-card__name"]}>{psychologist.name}</h2>
+        </div>
+      </div>
 
-        <div className={styles["psych-card__meta"]}>
-          <div className={styles["psych-card__label-wrap"]}>
+      <div className={styles["psych-card__body"]}>
+        {/* desktop: isim solda + rating+kalp sağda aynı satırda */}
+        <div className={styles["psych-card__name-row-desktop"]}>
+          <div className={styles["psych-card__label-wrap-desktop"]}>
             <span className={styles["psych-card__label"]}>Psychologist</span>
             <h2 className={styles["psych-card__name"]}>{psychologist.name}</h2>
           </div>
-
           <div className={styles["psych-card__top-row"]}>
             <div className={styles["psych-card__actions"]}>
               <div className={styles["psych-card__rating"]}>
@@ -93,78 +121,88 @@ export default function PsychologistCard({psychologist}: Props) {
               </span>
             </div>
             <button
-              className={`${styles["psych-card__fav"]}${fav ? ` ${styles.active}` : ""}`}
+              className={`${styles["psych-card__fav"]} ${styles["psych-card__fav--desktop"]}${fav ? ` ${styles.active}` : ""}`}
               onClick={handleFavorite}
               aria-label={fav ? "Remove from favorites" : "Add to favorites"}
             >
               <HeartIcon active={fav} />
             </button>
           </div>
+        </div>
 
-          <ul className={styles["psych-card__tags"]}>
-            <li className={styles["psych-card__tag"]}>
-              <span>Experience: </span>
-              {psychologist.experience}
-            </li>
-            <li className={styles["psych-card__tag"]}>
-              <span>License: </span>
-              {psychologist.license}
-            </li>
-            <li className={styles["psych-card__tag"]}>
-              <span>Specialization: </span>
-              {psychologist.specialization}
-            </li>
-            <li className={styles["psych-card__tag"]}>
-              <span>Initial_consultation: </span>
-              {psychologist.initial_consultation}
-            </li>
-          </ul>
+        {/* mobil: rating ayrı satırda */}
+        <div className={styles["psych-card__top-row-mobile"]}>
+          <div className={styles["psych-card__actions"]}>
+            <div className={styles["psych-card__rating"]}>
+              <StarIcon filled />
+              <span>Rating: {psychologist.rating.toFixed(2)}</span>
+            </div>
+            <span className={styles["psych-card__divider"]} />
+            <span className={styles["psych-card__price-inline"]}>
+              Price / 1 hour: <strong>${psychologist.price_per_hour}</strong>
+            </span>
+          </div>
+        </div>
 
-          <p className={styles["psych-card__about"]}>{psychologist.about}</p>
+        <ul className={styles["psych-card__tags"]}>
+          {tagRows.map((row, rowIndex) => (
+            <li key={rowIndex} className={styles["psych-card__tag-row"]}>
+              {row.map((tag) => (
+                <span key={tag.label} className={styles["psych-card__tag"]}>
+                  <span className={styles["psych-card__tag-label"]}>
+                    {tag.label}:{" "}
+                  </span>
+                  <span className={styles["psych-card__tag-value"]}>
+                    {tag.value}
+                  </span>
+                </span>
+              ))}
+            </li>
+          ))}
+        </ul>
 
-          {!expanded ? (
-            <button
-              className={styles["psych-card__read-more"]}
-              onClick={() => setExpanded(true)}
-            >
-              Read more
-            </button>
-          ) : (
-            <div className={styles["psych-card__expanded"]}>
-              <ul className={styles["psych-card__reviews"]}>
-                {psychologist.reviews?.map((review, i) => (
-                  <li key={i} className={styles["review"]}>
-                    <div className={styles["review__header"]}>
-                      <span className={styles["review__avatar"]}>
-                        {review.reviewer[0]}
-                      </span>
-                      <div className={styles["review__info"]}>
-                        <p className={styles["review__name"]}>
-                          {review.reviewer}
-                        </p>
-                        <div className={styles["review__stars"]}>
-                          <StarIcon filled />
-                          <span className={styles["review__rating-value"]}>
-                            {review.rating.toFixed(1)}
-                          </span>
-                        </div>
+        <p className={styles["psych-card__about"]}>{psychologist.about}</p>
+
+        {!expanded ? (
+          <button
+            className={styles["psych-card__read-more"]}
+            onClick={() => setExpanded(true)}
+          >
+            Read more
+          </button>
+        ) : (
+          <div className={styles["psych-card__expanded"]}>
+            <ul className={styles["psych-card__reviews"]}>
+              {psychologist.reviews?.map((review, i) => (
+                <li key={i} className={styles["review"]}>
+                  <div className={styles["review__header"]}>
+                    <span className={styles["review__avatar"]}>
+                      {review.reviewer[0]}
+                    </span>
+                    <div className={styles["review__info"]}>
+                      <p className={styles["review__name"]}>
+                        {review.reviewer}
+                      </p>
+                      <div className={styles["review__stars"]}>
+                        <StarIcon filled />
+                        <span className={styles["review__rating-value"]}>
+                          {review.rating.toFixed(1)}
+                        </span>
                       </div>
                     </div>
-                    <p className={styles["review__comment"]}>
-                      {review.comment}
-                    </p>
-                  </li>
-                ))}
-              </ul>
-              <button
-                className={styles["psych-card__appointment-btn"]}
-                onClick={() => setAppointmentOpen(true)}
-              >
-                Make an appointment
-              </button>
-            </div>
-          )}
-        </div>
+                  </div>
+                  <p className={styles["review__comment"]}>{review.comment}</p>
+                </li>
+              ))}
+            </ul>
+            <button
+              className={styles["psych-card__appointment-btn"]}
+              onClick={() => setAppointmentOpen(true)}
+            >
+              Make an appointment
+            </button>
+          </div>
+        )}
       </div>
 
       {appointmentOpen && (
